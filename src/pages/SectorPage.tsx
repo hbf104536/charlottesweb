@@ -82,6 +82,49 @@ export default function SectorPage() {
     return sector.people.filter((p) => p.name.toLowerCase().includes(q)).slice(0, 6);
   }, [query, sector]);
 
+  useEffect(() => {
+    const fg = graphRef.current;
+    if (!fg || !sector || sector.people.length === 0) return;
+
+    const influences = sector.people.map((p) => p.influence);
+    const minInfluence = Math.min(...influences);
+    const maxInfluence = Math.max(...influences);
+    const halfSpread = Math.max(dimensions.height / 2 - 110, 100);
+
+    function targetY(influence: number) {
+      const t =
+        maxInfluence === minInfluence
+          ? 0.5
+          : (influence - minInfluence) / (maxInfluence - minInfluence);
+      // higher influence -> more negative y -> nearer the top
+      // (the graph's coordinate origin is centered, not top-left)
+      return (0.5 - t) * 2 * halfSpread;
+    }
+
+    function influenceYForce(strength: number) {
+      let nodes: GraphNode[] = [];
+      const force = (alpha: number) => {
+        for (const n of nodes) {
+          if (n.y === undefined) continue;
+          const ty = targetY(n.influence);
+          const delta = Math.max(-200, Math.min(200, ty - n.y));
+          n.vy = (n.vy ?? 0) + delta * strength * alpha;
+        }
+      };
+      force.initialize = (ns: GraphNode[]) => {
+        nodes = ns;
+      };
+      return force;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (fg.d3Force("link") as any)?.distance(160).strength(0.3);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (fg.d3Force("charge") as any)?.strength(-220);
+    fg.d3Force("y", influenceYForce(0.15));
+    fg.d3ReheatSimulation();
+  }, [graphData, dimensions.height, sector]);
+
   const jumpToPerson = useCallback(
     (id: string) => {
       setSelectedId(id);
@@ -262,7 +305,8 @@ export default function SectorPage() {
           linkDirectionalParticleColor={() => "#7dd3fc"}
           onNodeClick={handleNodeClick}
           onBackgroundClick={handleBackgroundClick}
-          cooldownTicks={100}
+          onEngineStop={() => graphRef.current?.zoomToFit(400, 60)}
+          cooldownTicks={300}
         />
       </div>
     </div>
