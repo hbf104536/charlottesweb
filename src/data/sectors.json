@@ -11,44 +11,209 @@
         {
           "id": "defense",
           "name": "Department of Defense",
-          "description": "Placeholder - real data pending research.",
-          "people": [],
-          "relationships": []
+          "description": "The Pentagon's civilian leadership and its documented ties to Silicon Valley's defense-tech investment class.",
+          "people": [
+            {
+              "id": "dod-1",
+              "name": "Pete Hegseth",
+              "title": "Secretary of Defense (also uses \"Secretary of War\" per Executive Order 14347)",
+              "bio": "Former Fox News host and Army National Guard veteran who deployed to Guantanamo Bay, Iraq, and Afghanistan. Led veterans' advocacy groups Concerned Veterans for America and Vets for Freedom before joining the cabinet. Confirmed January 24, 2025 by a 51-50 Senate vote.",
+              "influence": 10,
+              "role": "official"
+            },
+            {
+              "id": "dod-2",
+              "name": "Steve Feinberg",
+              "title": "Deputy Secretary of Defense",
+              "bio": "Co-founder and former CEO of Cerberus Capital Management, a private-equity firm with extensive defense-industry holdings including past ownership of DynCorp International. Now serves as the Pentagon's chief operating officer. Confirmed March 14, 2025.",
+              "influence": 8,
+              "role": "official"
+            },
+            {
+              "id": "dod-3",
+              "name": "Marc Andreessen",
+              "title": "Co-founder, Andreessen Horowitz (a16z)",
+              "bio": "Silicon Valley venture capitalist and co-creator of the Mosaic/Netscape web browser, now a leading investor in AI, defense-tech, and crypto startups. Appointed to the reconstituted Defense Policy Board, an official DoD advisory committee, in June 2026. FEC filings show a $2.5 million personal contribution to a pro-Trump Super PAC in October 2024; combined giving with his firm exceeds $24 million for the 2024 cycle per OpenSecrets.",
+              "influence": 7,
+              "role": "private",
+              "source": "Bloomberg, Jun 2026; OpenSecrets donor records; Military.com"
+            }
+          ],
+          "relationships": [
+            { "source": "dod-2", "target": "dod-1", "type": "deputy to" },
+            { "source": "dod-3", "target": "dod-1", "type": "advises via Defense Policy Board" }
+          ]
         },
         {
           "id": "treasury",
           "name": "Department of the Treasury",
-          "description": "Placeholder - real data pending research.",
-          "people": [],
-          "relationships": []
+          "description": "The nation's fiscal leadership, Wall Street's debt-advisory apparatus, and a currently unsettled deputy secretaryship.",
+          "people": [
+            {
+              "id": "treasury-1",
+              "name": "Scott Bessent",
+              "title": "Secretary of the Treasury",
+              "bio": "Former hedge fund manager who led macro investing at Soros Fund Management before founding his own fund, Key Square Group. Confirmed January 27, 2025 by a 68-29 Senate vote, the 79th Treasury Secretary.",
+              "influence": 10,
+              "role": "official"
+            },
+            {
+              "id": "treasury-2",
+              "name": "Francis Brooke",
+              "title": "Nominee for Deputy Secretary (pending confirmation as of July 2026); Acting Under Secretary for International Affairs",
+              "bio": "Nominated May 11, 2026 to be Deputy Secretary after predecessor Michael Faulkender departed in August 2025. The Senate Finance Committee held his confirmation hearing on July 16, 2026, with no floor vote yet held.",
+              "influence": 6,
+              "role": "official"
+            },
+            {
+              "id": "treasury-3",
+              "name": "Jason Granet",
+              "title": "Chief Investment Officer, BNY (Bank of New York Mellon)",
+              "bio": "Joined BNY in 2021 after more than 20 years at Goldman Sachs, most recently heading International Liquidity Portfolio Management. Has served on the Treasury Borrowing Advisory Committee since November 2022 and is set to become its chair starting the August 2026 meeting.",
+              "influence": 6,
+              "role": "private",
+              "source": "Treasury.gov TBAC members list; Bloomberg Law"
+            }
+          ],
+          "relationships": [
+            { "source": "treasury-2", "target": "treasury-1", "type": "acting deputy to" },
+            { "source": "treasury-3", "target": "treasury-1", "type": "advises via Treasury Borrowing Advisory Committee" }
+          ]
         },
         {
           "id": "state",
           "name": "Department of State",
-          "description": "Placeholder - real data pending research.",
-          "people": [],
-          "relationships": []
+          "description": "American diplomacy's leadership under a dual-hatted Secretary of State and National Security Advisor.",
+          "people": [
+            {
+              "id": "state-1",
+              "name": "Marco Rubio",
+              "title": "Secretary of State (also concurrently National Security Advisor since May 1, 2025)",
+              "bio": "Served as U.S. Senator from Florida from 2011-2025 and earlier as Speaker of the Florida House of Representatives. First Latino American to serve as Secretary of State. Confirmed January 20, 2025 by a unanimous 99-0 Senate vote.",
+              "influence": 10,
+              "role": "official"
+            },
+            {
+              "id": "state-2",
+              "name": "Christopher Landau",
+              "title": "Deputy Secretary of State",
+              "bio": "Clerked for Justice Antonin Scalia and then-Judge Clarence Thomas, then spent 25 years at Kirkland & Ellis chairing its appellate practice before joining Quinn Emanuel. Previously served as U.S. Ambassador to Mexico (2019-2021). Confirmed March 24, 2025.",
+              "influence": 7,
+              "role": "official"
+            }
+          ],
+          "relationships": [
+            { "source": "state-2", "target": "state-1", "type": "deputy to" }
+          ]
         },
         {
           "id": "justice",
           "name": "Department of Justice",
-          "description": "Placeholder - real data pending research.",
-          "people": [],
-          "relationships": []
+          "description": "A department navigating an unusual leadership transition, and a pardon whose timing drew congressional scrutiny.",
+          "people": [
+            {
+              "id": "doj-1",
+              "name": "Todd Blanche",
+              "title": "Acting Attorney General (nominated for permanent confirmation; hearing held July 15-16, 2026, outcome pending)",
+              "bio": "Assistant U.S. Attorney in the SDNY's violent-crimes unit (2006-2014), later a white-collar defense partner at WilmerHale and Cadwalader who defended Paul Manafort. Became Trump's personal defense attorney in 2023, then confirmed Deputy Attorney General in March 2025 before becoming Acting AG on April 2, 2026.",
+              "influence": 9,
+              "role": "official"
+            },
+            {
+              "id": "doj-2",
+              "name": "Pam Bondi",
+              "title": "Attorney General, January 2025 - April 2026 (removed from office)",
+              "bio": "Served as the 87th U.S. Attorney General before being removed by President Trump on April 2, 2026, reportedly amid frustration over her handling of the Epstein files. Her tenure included the clemency decision described below.",
+              "influence": 8,
+              "role": "official"
+            },
+            {
+              "id": "doj-3",
+              "name": "Elizabeth Fago",
+              "title": "Healthcare entrepreneur, Buffalo, NY",
+              "bio": "FEC records show a $1 million donation to Make America Great Again Inc., a pro-Trump Super PAC, on April 3, 2025. Her son Paul Walczak, convicted of federal tax crimes, received a full presidential pardon on April 23, 2025 - 20 days later - processed through DOJ's Office of the Pardon Attorney. Reporting indicates the clemency application cited her donation; no quid pro quo has been legally established.",
+              "influence": 5,
+              "role": "private",
+              "source": "Buffalo News; Rolling Stone; DOJ Clemency Grants records"
+            }
+          ],
+          "relationships": [
+            { "source": "doj-1", "target": "doj-2", "type": "succeeded" },
+            { "source": "doj-3", "target": "doj-2", "type": "major donor, son pardoned during her tenure" }
+          ]
         },
         {
           "id": "hhs",
           "name": "Department of Health and Human Services",
-          "description": "Placeholder - real data pending research.",
-          "people": [],
-          "relationships": []
+          "description": "Vaccine and nutrition policy leadership, and the advisors and financial stakeholders shaping it.",
+          "people": [
+            {
+              "id": "hhs-1",
+              "name": "Robert F. Kennedy Jr.",
+              "title": "Secretary of Health and Human Services",
+              "bio": "Practiced as an environmental attorney for decades with the Natural Resources Defense Council and Waterkeeper Alliance before becoming a prominent vaccine-safety advocate. Ran for president in 2024 as an independent before endorsing Trump. Confirmed February 13, 2025 by a 52-48 Senate vote.",
+              "influence": 10,
+              "role": "official"
+            },
+            {
+              "id": "hhs-2",
+              "name": "Tony Robbins",
+              "title": "Motivational speaker and author",
+              "bio": "Appointed to HHS/CMS's 18-member Healthcare Advisory Committee (announced March 2026), which advises the Secretary and CMS Administrator on Medicare/Medicaid policy. Widely described in coverage as a Trump donor, though a specific FEC contribution amount could not be independently verified.",
+              "influence": 6,
+              "role": "private",
+              "source": "Bloomberg Law; STAT News, Mar 2026"
+            },
+            {
+              "id": "hhs-3",
+              "name": "Calley Means",
+              "title": "Senior Advisor, HHS Office of the Secretary; co-founder, TrueMed Inc.",
+              "bio": "Advised Kennedy on nutrition policy as a Special Government Employee starting March 2025, then moved to a full-time, paid Senior Advisor role in November 2025. HHS ethics filings showed he held $25-50 million in shares of TrueMed, a company he co-founded, while advising on related policy - prompting a formal congressional oversight inquiry.",
+              "influence": 6,
+              "role": "private",
+              "source": "Rep. Auchincloss oversight letter; IBTimes UK"
+            }
+          ],
+          "relationships": [
+            { "source": "hhs-2", "target": "hhs-1", "type": "advises via Healthcare Advisory Committee" },
+            { "source": "hhs-3", "target": "hhs-1", "type": "senior advisor to" }
+          ]
         },
         {
           "id": "agriculture",
           "name": "Department of Agriculture",
-          "description": "Placeholder - real data pending research.",
-          "people": [],
-          "relationships": []
+          "description": "Farm policy leadership and the agribusiness giants whose donations and regulatory exposure intersect at USDA.",
+          "people": [
+            {
+              "id": "usda-1",
+              "name": "Brooke Rollins",
+              "title": "Secretary of Agriculture",
+              "bio": "Founder, president and CEO of the America First Policy Institute (2021-2025) and earlier president/CEO of the Texas Public Policy Foundation. Served as Director of the White House Domestic Policy Council during Trump's first term. Confirmed February 13, 2025 by a 72-28 Senate vote.",
+              "influence": 10,
+              "role": "official"
+            },
+            {
+              "id": "usda-2",
+              "name": "Stephen Vaden",
+              "title": "Deputy Secretary of Agriculture",
+              "bio": "Yale Law School graduate who previously served as USDA General Counsel during Trump's first term, then as a judge on the U.S. Court of International Trade (2020-2025) before returning to USDA. Sworn in July 7, 2025.",
+              "influence": 7,
+              "role": "official"
+            },
+            {
+              "id": "usda-3",
+              "name": "Fabio Sandri",
+              "title": "President and CEO, Pilgrim's Pride Corporation",
+              "bio": "Leads the second-largest U.S. poultry processor, majority-owned by Brazil's JBS SA. Pilgrim's Pride donated $5 million to the Trump-Vance 2025 Presidential Inaugural Committee - the largest disclosed corporate donation to that committee - while the company remains directly regulated by USDA's Food Safety and Inspection Service. Sen. Elizabeth Warren sent a formal oversight letter in May 2025 questioning the donation's proximity to USDA decisions affecting the poultry industry.",
+              "influence": 7,
+              "role": "private",
+              "source": "OpenSecrets 2025 Inauguration Donors; Sen. Warren oversight letter, May 2025"
+            }
+          ],
+          "relationships": [
+            { "source": "usda-2", "target": "usda-1", "type": "deputy to" },
+            { "source": "usda-3", "target": "usda-1", "type": "major donor" }
+          ]
         }
       ]
     },
