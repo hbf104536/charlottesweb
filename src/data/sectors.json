@@ -3,43 +3,53 @@
     {
       "id": "federal-government",
       "name": "Federal Government",
-      "description": "Elected officials, senior staff, and power brokers shaping national policy.",
+      "description": "Cabinet departments, their leadership, and documented financial/influence ties to private individuals.",
       "available": true,
-      "people": [
+      "people": [],
+      "relationships": [],
+      "departments": [
         {
-          "id": "fg-1",
-          "name": "Margaret Ellison",
-          "title": "Senior Policy Advisor, White House",
-          "bio": "Two-decade veteran of Capitol Hill staffing, now shaping the administration's domestic agenda. Known for building coalitions across party lines.",
-          "influence": 9
+          "id": "defense",
+          "name": "Department of Defense",
+          "description": "Placeholder - real data pending research.",
+          "people": [],
+          "relationships": []
         },
         {
-          "id": "fg-2",
-          "name": "Senator Thomas Kade",
-          "title": "U.S. Senator, Appropriations Committee Chair",
-          "bio": "Controls the purse strings for major federal spending bills. A key swing vote courted by both parties.",
-          "influence": 10
+          "id": "treasury",
+          "name": "Department of the Treasury",
+          "description": "Placeholder - real data pending research.",
+          "people": [],
+          "relationships": []
         },
         {
-          "id": "fg-3",
-          "name": "Dana Reyes",
-          "title": "Chief of Staff, Department of Commerce",
-          "bio": "Former management consultant turned government operator, credited with modernizing the department's tech policy shop.",
-          "influence": 7
+          "id": "state",
+          "name": "Department of State",
+          "description": "Placeholder - real data pending research.",
+          "people": [],
+          "relationships": []
         },
         {
-          "id": "fg-4",
-          "name": "General Walter Iverson (Ret.)",
-          "title": "National Security Council Advisor",
-          "bio": "Retired four-star general who now shapes defense and foreign policy strategy from inside the West Wing.",
-          "influence": 8
+          "id": "justice",
+          "name": "Department of Justice",
+          "description": "Placeholder - real data pending research.",
+          "people": [],
+          "relationships": []
+        },
+        {
+          "id": "hhs",
+          "name": "Department of Health and Human Services",
+          "description": "Placeholder - real data pending research.",
+          "people": [],
+          "relationships": []
+        },
+        {
+          "id": "agriculture",
+          "name": "Department of Agriculture",
+          "description": "Placeholder - real data pending research.",
+          "people": [],
+          "relationships": []
         }
-      ],
-      "relationships": [
-        { "source": "fg-1", "target": "fg-2", "type": "lobbies" },
-        { "source": "fg-2", "target": "fg-3", "type": "oversees budget for" },
-        { "source": "fg-1", "target": "fg-4", "type": "college roommate" },
-        { "source": "fg-4", "target": "fg-2", "type": "briefs" }
       ]
     },
     {
