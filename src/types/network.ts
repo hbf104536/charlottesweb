@@ -5,12 +5,14 @@ export interface Person {
   name: string;
   title: string;
   bio: string;
-  influence: number; // 1-10, drives node size
+  influence: number; // 1-10, drives node size and vertical tier
   imageUrl?: string;
   /** "official" = government office holder, "private" = private individual with documented influence/financial ties */
   role?: PersonRole;
-  /** Source URL backing a "private" role's documented connection, shown in the tooltip */
+  /** Source citation backing a "private" role's documented connection, shown in the tooltip */
   source?: string;
+  /** Optional cluster id (e.g. a department) this person belongs to, used to group and label nodes spatially */
+  group?: string;
 }
 
 export interface Relationship {
@@ -19,12 +21,9 @@ export interface Relationship {
   type: string; // e.g. "advises", "funds", "college roommate"
 }
 
-export interface Department {
+export interface PersonGroup {
   id: string;
-  name: string;
-  description: string;
-  people: Person[];
-  relationships: Relationship[];
+  label: string;
 }
 
 export interface Sector {
@@ -34,8 +33,8 @@ export interface Sector {
   available: boolean;
   people: Person[];
   relationships: Relationship[];
-  /** When present, this sector is a hub linking to per-department webs instead of one flat graph */
-  departments?: Department[];
+  /** Optional named clusters (e.g. departments) for spatial grouping + header labels within one graph */
+  groups?: PersonGroup[];
 }
 
 export interface SectorsData {

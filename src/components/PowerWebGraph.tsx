@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState, useCallback, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ForceGraph2D, { type ForceGraphMethods, type NodeObject, type LinkObject } from "react-force-graph-2d";
-import type { Person, Relationship } from "../types/network";
+import type { Person, Relationship, PersonGroup } from "../types/network";
 
 interface GraphNode extends NodeObject {
   id: string;
@@ -11,6 +11,7 @@ interface GraphNode extends NodeObject {
   influence: number;
   role?: "official" | "private";
   source?: string;
+  group?: string;
   x?: number;
   y?: number;
 }
@@ -29,6 +30,8 @@ function escapeHtml(str: string) {
     .replace(/"/g, "&quot;");
 }
 
+const GROUP_COLUMN_SPACING = 320;
+
 interface PowerWebGraphProps {
   title: string;
   description: string;
@@ -36,9 +39,18 @@ interface PowerWebGraphProps {
   backLabel: string;
   people: Person[];
   relationships: Relationship[];
+  groups?: PersonGroup[];
 }
 
-export default function PowerWebGraph({ title, description, backTo, backLabel, people, relationships }: PowerWebGraphProps) {
+export default function PowerWebGraph({
+  title,
+  description,
+  backTo,
+  backLabel,
+  people,
+  relationships,
+  groups,
+}: PowerWebGraphProps) {
   const graphRef = useRef<ForceGraphMethods<GraphNode, GraphLink> | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
@@ -97,13 +109,12 @@ export default function PowerWebGraph({ title, description, backTo, backLabel, p
     [peopleById]
   );
 
-  useEffect(() => {
-    const fg = graphRef.current;
-    if (!fg || people.length === 0) return;
-
+  // Shared layout math: vertical tier by influence, horizontal column by group.
+  // Used both to configure the force simulation and to place group header labels.
+  const layout = useMemo(() => {
     const influences = people.map((p) => p.influence);
-    const minInfluence = Math.min(...influences);
-    const maxInfluence = Math.max(...influences);
+    const minInfluence = Math.min(...influences, 0);
+    const maxInfluence = Math.max(...influences, 1);
     const halfSpread = Math.max(dimensions.height / 2 - 110, 100);
 
     function targetY(influence: number) {
@@ -116,14 +127,55 @@ export default function PowerWebGraph({ title, description, backTo, backLabel, p
       return (0.5 - t) * 2 * halfSpread;
     }
 
+    const groupIndex = new Map<string, number>();
+    (groups ?? []).forEach((g, i) => groupIndex.set(g.id, i));
+    const groupCount = groups?.length ?? 0;
+
+    function targetX(groupId: string | undefined) {
+      if (!groupId || !groupIndex.has(groupId)) return 0;
+      const idx = groupIndex.get(groupId)!;
+      return (idx - (groupCount - 1) / 2) * GROUP_COLUMN_SPACING;
+    }
+
+    const groupLabelPos = new Map<string, { x: number; y: number }>();
+    (groups ?? []).forEach((g) => {
+      const members = people.filter((p) => p.group === g.id);
+      if (members.length === 0) return;
+      const topY = Math.min(...members.map((p) => targetY(p.influence)));
+      groupLabelPos.set(g.id, { x: targetX(g.id), y: topY - 60 });
+    });
+
+    return { targetY, targetX, groupLabelPos };
+  }, [people, dimensions.height, groups]);
+
+  useEffect(() => {
+    const fg = graphRef.current;
+    if (!fg || people.length === 0) return;
+
     function influenceYForce(strength: number) {
       let nodes: GraphNode[] = [];
       const force = (alpha: number) => {
         for (const n of nodes) {
           if (n.y === undefined) continue;
-          const ty = targetY(n.influence);
+          const ty = layout.targetY(n.influence);
           const delta = Math.max(-200, Math.min(200, ty - n.y));
           n.vy = (n.vy ?? 0) + delta * strength * alpha;
+        }
+      };
+      force.initialize = (ns: GraphNode[]) => {
+        nodes = ns;
+      };
+      return force;
+    }
+
+    function groupXForce(strength: number) {
+      let nodes: GraphNode[] = [];
+      const force = (alpha: number) => {
+        for (const n of nodes) {
+          if (!n.group || n.x === undefined) continue;
+          const tx = layout.targetX(n.group);
+          const delta = Math.max(-200, Math.min(200, tx - n.x));
+          n.vx = (n.vx ?? 0) + delta * strength * alpha;
         }
       };
       force.initialize = (ns: GraphNode[]) => {
@@ -137,8 +189,9 @@ export default function PowerWebGraph({ title, description, backTo, backLabel, p
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (fg.d3Force("charge") as any)?.strength(-220);
     fg.d3Force("y", influenceYForce(0.15));
+    fg.d3Force("x", groups && groups.length > 0 ? groupXForce(0.2) : null);
     fg.d3ReheatSimulation();
-  }, [graphData, dimensions.height, people]);
+  }, [graphData, layout, people, groups]);
 
   const jumpToPerson = useCallback(
     (id: string) => {
@@ -335,7 +388,30 @@ export default function PowerWebGraph({ title, description, backTo, backLabel, p
           linkDirectionalParticleColor={(l) => (isPrivateLink(l as unknown as GraphLink) ? "#fbbf24" : "#7dd3fc")}
           onNodeClick={handleNodeClick}
           onBackgroundClick={handleBackgroundClick}
-          onEngineStop={() => graphRef.current?.zoomToFit(400, 140)}
+          onEngineStop={() => graphRef.current?.zoomToFit(400, 170)}
+          onRenderFramePost={(ctx, globalScale) => {
+            if (!groups || groups.length === 0) return;
+            const fontSize = Math.min(15 / globalScale, 22);
+            ctx.save();
+            ctx.font = `700 ${fontSize}px Inter, sans-serif`;
+            ctx.textAlign = "center";
+            ctx.textBaseline = "bottom";
+            groups.forEach((g) => {
+              const pos = layout.groupLabelPos.get(g.id);
+              if (!pos) return;
+              const label = g.label.toUpperCase();
+              const halfWidth = ctx.measureText(label).width / 2 + 6 / globalScale;
+              ctx.fillStyle = "rgba(203, 213, 225, 0.85)";
+              ctx.fillText(label, pos.x, pos.y);
+              ctx.strokeStyle = "rgba(56, 189, 248, 0.5)";
+              ctx.lineWidth = 1 / globalScale;
+              ctx.beginPath();
+              ctx.moveTo(pos.x - halfWidth, pos.y + 6 / globalScale);
+              ctx.lineTo(pos.x + halfWidth, pos.y + 6 / globalScale);
+              ctx.stroke();
+            });
+            ctx.restore();
+          }}
           cooldownTicks={300}
         />
       </div>

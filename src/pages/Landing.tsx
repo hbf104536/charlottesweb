@@ -39,9 +39,7 @@ export default function Landing() {
                 <p className="mt-2 text-sm text-slate-400">{sector.description}</p>
                 {sector.available && (
                   <p className="mt-4 text-xs uppercase tracking-wide text-sky-400/80">
-                    {sector.departments
-                      ? `${sector.departments.length} departments`
-                      : `${sector.people.length} people · ${sector.relationships.length} connections`}
+                    {sector.people.length} people &middot; {sector.relationships.length} connections
                   </p>
                 )}
               </div>
