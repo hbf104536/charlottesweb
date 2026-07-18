@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-web-bg text-slate-200 antialiased;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(168, 85, 247, 0.08), transparent 40%);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #05070d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 8px;
+}
