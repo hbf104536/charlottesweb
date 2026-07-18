@@ -1,0 +1,154 @@
+{
+  "sectors": [
+    {
+      "id": "federal-government",
+      "name": "Federal Government",
+      "description": "Elected officials, senior staff, and power brokers shaping national policy.",
+      "available": true,
+      "people": [
+        {
+          "id": "fg-1",
+          "name": "Margaret Ellison",
+          "title": "Senior Policy Advisor, White House",
+          "bio": "Two-decade veteran of Capitol Hill staffing, now shaping the administration's domestic agenda. Known for building coalitions across party lines.",
+          "influence": 9
+        },
+        {
+          "id": "fg-2",
+          "name": "Senator Thomas Kade",
+          "title": "U.S. Senator, Appropriations Committee Chair",
+          "bio": "Controls the purse strings for major federal spending bills. A key swing vote courted by both parties.",
+          "influence": 10
+        },
+        {
+          "id": "fg-3",
+          "name": "Dana Reyes",
+          "title": "Chief of Staff, Department of Commerce",
+          "bio": "Former management consultant turned government operator, credited with modernizing the department's tech policy shop.",
+          "influence": 7
+        },
+        {
+          "id": "fg-4",
+          "name": "General Walter Iverson (Ret.)",
+          "title": "National Security Council Advisor",
+          "bio": "Retired four-star general who now shapes defense and foreign policy strategy from inside the West Wing.",
+          "influence": 8
+        }
+      ],
+      "relationships": [
+        { "source": "fg-1", "target": "fg-2", "type": "lobbies" },
+        { "source": "fg-2", "target": "fg-3", "type": "oversees budget for" },
+        { "source": "fg-1", "target": "fg-4", "type": "college roommate" },
+        { "source": "fg-4", "target": "fg-2", "type": "briefs" }
+      ]
+    },
+    {
+      "id": "finance",
+      "name": "Finance",
+      "description": "Bank executives, hedge fund managers, and regulators who move capital markets.",
+      "available": true,
+      "people": [
+        {
+          "id": "fin-1",
+          "name": "Richard Voss",
+          "title": "CEO, Meridian Capital Group",
+          "bio": "Runs one of the largest private equity firms in the country, with a reputation for aggressive but disciplined dealmaking.",
+          "influence": 9
+        },
+        {
+          "id": "fin-2",
+          "name": "Elena Marchetti",
+          "title": "Chair, Federal Reserve Regional Bank",
+          "bio": "Sets interest rate policy recommendations and is a frequent voice in national economic debates.",
+          "influence": 10
+        },
+        {
+          "id": "fin-3",
+          "name": "Marcus Webb",
+          "title": "Founder, Northbridge Hedge Fund",
+          "bio": "Built a multi-billion dollar fund from scratch; known for high-conviction macro bets and a small, secretive inner circle.",
+          "influence": 8
+        },
+        {
+          "id": "fin-4",
+          "name": "Priya Chandrasekaran",
+          "title": "Managing Partner, Vantage Ventures",
+          "bio": "Top venture investor who sits on the boards of several unicorn startups and bridges finance with tech.",
+          "influence": 7
+        }
+      ],
+      "relationships": [
+        { "source": "fin-1", "target": "fin-3", "type": "funds" },
+        { "source": "fin-2", "target": "fin-1", "type": "regulates" },
+        { "source": "fin-3", "target": "fin-4", "type": "co-invests with" },
+        { "source": "fin-1", "target": "fin-4", "type": "board member" }
+      ]
+    },
+    {
+      "id": "technology",
+      "name": "Technology",
+      "description": "Founders, investors, and executives steering the direction of the tech industry.",
+      "available": true,
+      "people": [
+        {
+          "id": "tech-1",
+          "name": "Adrian Cho",
+          "title": "CEO, Nimbus AI",
+          "bio": "Founded one of the leading frontier AI labs after a career at two major tech giants. Sets the pace for the industry's AI roadmap.",
+          "influence": 10
+        },
+        {
+          "id": "tech-2",
+          "name": "Sasha Kowalski",
+          "title": "General Partner, Ridgeline Ventures",
+          "bio": "Early backer of three unicorns, now one of the most sought-after board members in Silicon Valley.",
+          "influence": 8
+        },
+        {
+          "id": "tech-3",
+          "name": "Devon Okafor",
+          "title": "CTO, Helix Systems",
+          "bio": "Architect behind several widely adopted open-source infrastructure projects; quietly influential among engineering leadership.",
+          "influence": 7
+        },
+        {
+          "id": "tech-4",
+          "name": "Naomi Fischer",
+          "title": "Founder & CEO, Fischer Robotics",
+          "bio": "Serial entrepreneur pushing autonomous systems into manufacturing; frequently advises federal tech policy committees.",
+          "influence": 8
+        }
+      ],
+      "relationships": [
+        { "source": "tech-1", "target": "tech-2", "type": "advises" },
+        { "source": "tech-2", "target": "tech-3", "type": "college roommate" },
+        { "source": "tech-1", "target": "tech-4", "type": "funds" },
+        { "source": "tech-3", "target": "tech-4", "type": "advises" }
+      ]
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "description": "Network executives, publishers, and platform owners shaping the national narrative.",
+      "available": false,
+      "people": [],
+      "relationships": []
+    },
+    {
+      "id": "energy",
+      "name": "Energy",
+      "description": "Oil, gas, and renewable energy executives with outsized influence over policy and markets.",
+      "available": false,
+      "people": [],
+      "relationships": []
+    },
+    {
+      "id": "defense",
+      "name": "Defense",
+      "description": "Contractors, Pentagon officials, and intelligence community leaders.",
+      "available": false,
+      "people": [],
+      "relationships": []
+    }
+  ]
+}
