@@ -172,6 +172,335 @@
           "role": "private",
           "source": "OpenSecrets 2025 Inauguration Donors; Sen. Warren oversight letter, May 2025",
           "group": "agriculture"
+        },
+        {
+          "id": "interior-1",
+          "name": "Doug Burgum",
+          "title": "Secretary of the Interior",
+          "bio": "Mortgaged inherited North Dakota farmland in 1983 to help fund Great Plains Software, which he grew and sold to Microsoft for $1.1 billion in 2001. Served as the 33rd Governor of North Dakota (2016-2024) before joining the cabinet. Confirmed January 30, 2025 by a 79-18 Senate vote.",
+          "influence": 8,
+          "role": "official",
+          "group": "interior"
+        },
+        {
+          "id": "interior-2",
+          "name": "Katharine MacGregor",
+          "title": "Deputy Secretary of the Interior",
+          "bio": "Previously Vice President at NextEra Energy and held senior Capitol Hill staff roles; also held this same Deputy Secretary post during Trump's first term. Confirmed May 14, 2025.",
+          "influence": 6,
+          "role": "official",
+          "group": "interior"
+        },
+        {
+          "id": "interior-3",
+          "name": "Harold Hamm",
+          "title": "Founder and Executive Chairman, Continental Resources",
+          "bio": "Built one of the largest independent oil producers in the U.S. around North Dakota's Bakken Shale. A longtime personal donor to Burgum - backing both of his gubernatorial campaigns, giving $250,000 to Burgum's 'Best of America' PAC, and $50 million to Burgum's planned presidential library. Reporting based on internal emails shows Interior issued Continental Resources dozens of new Wyoming drilling permits in August 2025 after Burgum announced a 28-day permit-review cap at an event Hamm hosted that April.",
+          "influence": 5,
+          "role": "private",
+          "source": "High Country News; Revolving Door Project; Center for Western Priorities",
+          "group": "interior"
+        },
+        {
+          "id": "commerce-1",
+          "name": "Howard Lutnick",
+          "title": "Secretary of Commerce",
+          "bio": "Chairman and CEO of Cantor Fitzgerald from 1996 until stepping down in 2025 to join the cabinet, a 40-plus-year Wall Street bond-trading career. Confirmed February 18, 2025 by a 51-45 Senate vote.",
+          "influence": 8,
+          "role": "official",
+          "group": "commerce"
+        },
+        {
+          "id": "commerce-2",
+          "name": "Paul Dabbar",
+          "title": "Deputy Secretary of Commerce",
+          "bio": "Most recently President/CEO of Bohr Quantum Technology; previously Under Secretary for Science at the Department of Energy during Trump's first term. Confirmed June 25, 2025 by a 56-40 Senate vote.",
+          "influence": 6,
+          "role": "official",
+          "group": "commerce"
+        },
+        {
+          "id": "commerce-3",
+          "name": "Brandon Lutnick",
+          "title": "Chairman, Cantor Fitzgerald",
+          "bio": "Took over Cantor Fitzgerald when his father Howard divested to join the cabinet, controlling trusts (also benefiting brother Kyle) that hold the family's stake rather than a blind trust. In 2026 Cantor Fitzgerald acted as placement agent on a $1.6 billion financing deal for USA Rare Earth Inc., a critical-minerals company concurrently in an arrangement with the Commerce Department; four members of Congress sent formal oversight letters demanding records of Commerce-Cantor Fitzgerald contacts.",
+          "influence": 5,
+          "role": "private",
+          "source": "CNBC; Sen. Warren/Van Hollen/Wyden press releases, 2026",
+          "group": "commerce"
+        },
+        {
+          "id": "labor-1",
+          "name": "Keith Sonderling",
+          "title": "Acting Secretary of Labor (nominated for permanent confirmation; Senate HELP Committee hearing held July 16, 2026, vote scheduled July 23, 2026)",
+          "bio": "Confirmed Deputy Secretary of Labor in March 2025, then designated Acting Secretary on April 20, 2026 after Lori Chavez-DeRemer resigned amid a reported misconduct investigation. Previously an EEOC Commissioner (2020-2024) and led DOL's Wage and Hour Division under the first Trump administration.",
+          "influence": 8,
+          "role": "official",
+          "group": "labor"
+        },
+        {
+          "id": "labor-2",
+          "name": "Marc Freedman",
+          "title": "Vice President, Workplace Policy, U.S. Chamber of Commerce",
+          "bio": "Has led the Chamber's workplace-policy advocacy since 2004. A registered federal lobbyist and the Chamber's named spokesperson on DOL's February 2026 proposed rule redefining independent-contractor status, which the Chamber-led business coalition has said it is prepared to challenge in court.",
+          "influence": 5,
+          "role": "private",
+          "source": "U.S. Chamber of Commerce; DOL rulemaking notice, Feb 2026",
+          "group": "labor"
+        },
+        {
+          "id": "hud-1",
+          "name": "Scott Turner",
+          "title": "Secretary of Housing and Urban Development",
+          "bio": "Former NFL cornerback (1995-2003) who later served two terms as a Texas state representative and led the White House Opportunity and Revitalization Council in Trump's first term. Confirmed February 5, 2025 by a 55-44 Senate vote.",
+          "influence": 8,
+          "role": "official",
+          "group": "hud"
+        },
+        {
+          "id": "hud-2",
+          "name": "Andrew Hughes",
+          "title": "Deputy Secretary of Housing and Urban Development",
+          "bio": "Served as HUD Chief of Staff under Secretary Ben Carson (2018-2021) and again under Turner in 2025 before his confirmation on June 10, 2025. Reportedly the youngest Deputy Secretary in HUD history.",
+          "influence": 6,
+          "role": "official",
+          "group": "hud"
+        },
+        {
+          "id": "hud-3",
+          "name": "Robert Broeksmit",
+          "title": "President and CEO, Mortgage Bankers Association",
+          "bio": "Leads the MBA's advocacy on federal mortgage policy. MBA's Senate LDA disclosures name HUD as a lobbied agency, and Broeksmit met directly with Secretary Turner in 2025 before sending HUD formal recommendations in 2026 on FHA multifamily mortgage insurance in Opportunity Zones.",
+          "influence": 5,
+          "role": "private",
+          "source": "MBA NewsLink; Scotsman Guide; Senate LDA filings",
+          "group": "hud"
+        },
+        {
+          "id": "dot-1",
+          "name": "Sean Duffy",
+          "title": "Secretary of Transportation",
+          "bio": "Represented Wisconsin's 7th District in the U.S. House (2011-2019) and later co-hosted Fox Business's 'The Bottom Line.' Confirmed January 28, 2025 by a 77-22 Senate vote.",
+          "influence": 8,
+          "role": "official",
+          "group": "transportation"
+        },
+        {
+          "id": "dot-2",
+          "name": "Steven Bradbury",
+          "title": "Deputy Secretary of Transportation",
+          "bio": "Previously DOT General Counsel (2017-2021) and briefly Acting Secretary of Transportation in January 2021. Confirmed March 11, 2025 by a 51-46 Senate vote.",
+          "influence": 6,
+          "role": "official",
+          "group": "transportation"
+        },
+        {
+          "id": "dot-3",
+          "name": "Jeff Miller",
+          "title": "Founder and CEO, Miller Strategies LLC",
+          "bio": "A registered federal lobbyist who lobbied DOT in 2025 for at least nine clients, and served as Finance Chair of Trump's 2025 inaugural committee. ProPublica reporting found Miller and his firm's COO donated to the congressional campaign of Secretary Duffy's son-in-law, who is running for Duffy's former Wisconsin House seat.",
+          "influence": 5,
+          "role": "private",
+          "source": "ProPublica; Wisconsin Watch, 2026",
+          "group": "transportation"
+        },
+        {
+          "id": "energy-1",
+          "name": "Chris Wright",
+          "title": "Secretary of Energy",
+          "bio": "MIT-trained mechanical engineer who founded Pinnacle Technologies and later Liberty Energy, which grew into North America's second-largest hydraulic fracturing company under his leadership. Confirmed February 3, 2025 by a 59-38 Senate vote.",
+          "influence": 8,
+          "role": "official",
+          "group": "energy"
+        },
+        {
+          "id": "energy-2",
+          "name": "James Danly",
+          "title": "Deputy Secretary of Energy",
+          "bio": "Former FERC Commissioner and briefly FERC Chairman (2020-2021); was an Energy Regulatory Group partner at Skadden, Arps before returning to government. Confirmed May 13, 2025 by a 52-44 Senate vote.",
+          "influence": 6,
+          "role": "official",
+          "group": "energy"
+        },
+        {
+          "id": "energy-3",
+          "name": "Joe Craft",
+          "title": "President and CEO, Alliance Resource Partners",
+          "bio": "Leads the third-largest coal producer in the eastern U.S. Formally appointed by Secretary Wright to the Secretary of Energy Advisory Board on July 9, 2026 for a two-year term. A longtime major Republican donor who, with wife and former UN Ambassador Kelly Craft, co-chairs the RNC's Presidential Trust fundraising vehicle.",
+          "influence": 5,
+          "role": "private",
+          "source": "DOE advisory board announcement, Jul 2026; Center for Public Integrity donor profile",
+          "group": "energy"
+        },
+        {
+          "id": "education-1",
+          "name": "Linda McMahon",
+          "title": "Secretary of Education",
+          "bio": "Co-founder and former CEO/president of WWE (1980-2009) and Administrator of the Small Business Administration in Trump's first term. Confirmed March 3, 2025 by a 51-45 Senate vote; has described her mandate as working 'to work herself out of a job' amid ongoing efforts to shift the department's functions elsewhere.",
+          "influence": 8,
+          "role": "official",
+          "group": "education"
+        },
+        {
+          "id": "education-2",
+          "name": "Nicholas Kent",
+          "title": "Under Secretary of Education, delegated the duties of Deputy Secretary since February 2026",
+          "bio": "Previously Deputy Secretary of Education for Virginia under Gov. Glenn Youngkin, and before that Chief Policy Officer at a for-profit college trade association. Confirmed Under Secretary on August 4, 2025; his predecessor nominee for Deputy Secretary withdrew amid Senate opposition.",
+          "influence": 6,
+          "role": "official",
+          "group": "education"
+        },
+        {
+          "id": "education-3",
+          "name": "Jeffrey Yass",
+          "title": "Co-founder, Susquehanna International Group",
+          "bio": "The nation's largest school-choice/voucher megadonor. FEC filings show over $82 million in federal-level spending ahead of the 2026 midterms, including millions to school-choice advocacy vehicles. He is a direct financial beneficiary of the Educational Choice for Children Act, a federal tax-credit scholarship program enacted July 2025 that the Department of Education is now implementing.",
+          "influence": 5,
+          "role": "private",
+          "source": "OpenSecrets donor records; ED.gov fact sheet; Forbes",
+          "group": "education"
+        },
+        {
+          "id": "va-1",
+          "name": "Doug Collins",
+          "title": "Secretary of Veterans Affairs",
+          "bio": "Former U.S. Representative for Georgia's 9th District (2013-2021) and a longtime U.S. Air Force Reserve chaplain. Confirmed February 4, 2025 by a 77-23 Senate vote.",
+          "influence": 8,
+          "role": "official",
+          "group": "va"
+        },
+        {
+          "id": "va-2",
+          "name": "Paul Lawrence",
+          "title": "Deputy Secretary of Veterans Affairs",
+          "bio": "Directs department-wide policy and operations as VA's chief operating officer. Confirmed March 27, 2025.",
+          "influence": 6,
+          "role": "official",
+          "group": "va"
+        },
+        {
+          "id": "va-3",
+          "name": "Larry Ellison",
+          "title": "Co-founder and Executive Chairman, Oracle Corporation",
+          "bio": "Oracle's Cerner/Oracle Health division holds VA's Electronic Health Record modernization contract, estimated at roughly $37 billion in total value. Oracle's Senate LDA filings specifically list VA electronic-records oversight as a lobbied issue, and Ellison was appointed to the President's Council of Advisors on Science and Technology in March 2026.",
+          "influence": 5,
+          "role": "private",
+          "source": "Senate LDA filings; OpenSecrets; Revolving Door Project",
+          "group": "va"
+        },
+        {
+          "id": "dhs-1",
+          "name": "Markwayne Mullin",
+          "title": "Secretary of Homeland Security",
+          "bio": "Former U.S. Senator (2023-2026) and Representative (2013-2023) from Oklahoma, an enrolled Cherokee Nation citizen and former professional MMA fighter. Confirmed March 23, 2026 by a 54-45 Senate vote, succeeding Kristi Noem after her removal that March.",
+          "influence": 8,
+          "role": "official",
+          "group": "dhs"
+        },
+        {
+          "id": "dhs-2",
+          "name": "Troy Edgar",
+          "title": "Deputy Secretary of Homeland Security",
+          "bio": "Former IBM executive who served as DHS's CFO during Trump's first term. Confirmed March 6, 2025 by a 53-43 Senate vote.",
+          "influence": 6,
+          "role": "official",
+          "group": "dhs"
+        },
+        {
+          "id": "dhs-3",
+          "name": "George Zoley",
+          "title": "Founder, Chairman and CEO, The GEO Group",
+          "bio": "GEO Group and its subsidiaries have been awarded more than $1 billion in federal contracts for ICE detention since Trump retook office. Zoley personally contributed to Trump's Save America fundraising committee and a joint GOP committee per FEC records; GEO Group's PAC was the first corporate PAC to max out to Trump's campaign, and the company donated $500,000 to the 2025 inaugural committee.",
+          "influence": 5,
+          "role": "private",
+          "source": "FEC records; CREW investigation; OpenSecrets",
+          "group": "dhs"
+        },
+        {
+          "id": "dhs-4",
+          "name": "Alex Karp",
+          "title": "CEO and co-founder, Palantir Technologies",
+          "bio": "In February 2026, DHS signed a department-wide blanket purchase agreement with Palantir worth up to $1 billion, letting ICE, CBP, FEMA and CISA buy its software without competitive bidding. Karp personally contributed $1 million to Trump's inauguration fund in early 2025, a notable shift given his prior support for Democratic candidates.",
+          "influence": 5,
+          "role": "private",
+          "source": "The Hill; CNBC, 2026",
+          "group": "dhs"
+        },
+        {
+          "id": "wh-1",
+          "name": "Susie Wiles",
+          "title": "White House Chief of Staff",
+          "bio": "The first woman to serve as White House Chief of Staff, in office since January 20, 2025. Widely described in reporting as commanding unmatched authority in Trump's orbit, often characterized as the last person he consults before major decisions.",
+          "influence": 9,
+          "role": "official",
+          "group": "wh-staff"
+        },
+        {
+          "id": "wh-2",
+          "name": "Stephen Miller",
+          "title": "Deputy Chief of Staff for Policy and Homeland Security Advisor",
+          "bio": "In office since January 20, 2025, simultaneously holding both the policy and homeland-security-advisor portfolios, giving him unusually broad reach across immigration and domestic policy. Previously a senior advisor in Trump's first term.",
+          "influence": 7,
+          "role": "official",
+          "group": "wh-staff"
+        },
+        {
+          "id": "wh-3",
+          "name": "Karoline Leavitt",
+          "title": "White House Press Secretary",
+          "bio": "The youngest White House Press Secretary in history, in office since January 20, 2025. Previously communications director for Rep. Elise Stefanik and Trump's 2024 campaign press secretary.",
+          "influence": 6,
+          "role": "official",
+          "group": "wh-staff"
+        },
+        {
+          "id": "wh-4",
+          "name": "Dan Scavino",
+          "title": "Deputy Chief of Staff; Director, White House Presidential Personnel Office",
+          "bio": "A Trump aide since 2015, serving as Deputy Chief of Staff since January 2025 and additionally directing the office that vets administration hires and fires since October 2025, combining physical proximity to Trump with control over personnel decisions.",
+          "influence": 6,
+          "role": "official",
+          "group": "wh-staff"
+        },
+        {
+          "id": "adv-1",
+          "name": "Mark Levin",
+          "title": "Syndicated radio host and Fox News host",
+          "bio": "Former chief of staff to Reagan-era Attorney General Ed Meese. Appointed by Trump to DHS's Homeland Security Advisory Council in April 2025; has given Trump phone interviews for his radio show and was invited to address the White House Hanukkah Reception in December 2025, though he has also publicly broken with Trump on some policy, including the 2026 Iran deal.",
+          "influence": 6,
+          "role": "private",
+          "source": "Variety; Breitbart; Washington Times, 2025-2026",
+          "group": "outside-advisors"
+        },
+        {
+          "id": "adv-2",
+          "name": "Laura Loomer",
+          "title": "Political activist",
+          "bio": "Met with Trump in the Oval Office on April 2, 2025, presenting a list of roughly a dozen National Security Council staffers she alleged were disloyal; at least four were fired the next day. Multiply sourced by CNN, Axios, and NPR; Trump publicly confirmed speaking with her and that she'd made personnel recommendations while downplaying her role.",
+          "influence": 5,
+          "role": "private",
+          "source": "CNN; Axios; NPR, Apr 2025",
+          "group": "outside-advisors"
+        },
+        {
+          "id": "adv-3",
+          "name": "Jared Kushner",
+          "title": "Founder, Affinity Partners; Trump's son-in-law",
+          "bio": "Trump announced Kushner as 'Special Envoy for Peace' in February 2026, though the White House separately said the role 'would not be an official one.' Documented activity includes joining envoy Steve Witkoff on Ukraine peace talks in Moscow and Iran nuclear negotiations in Geneva; congressional letters have raised conflict-of-interest concerns over his Middle East business dealings.",
+          "influence": 6,
+          "role": "private",
+          "source": "The Hill; CREW; Times of Israel, 2026",
+          "group": "outside-advisors"
+        },
+        {
+          "id": "adv-4",
+          "name": "Elon Musk",
+          "title": "CEO, Tesla and SpaceX",
+          "bio": "Led the Department of Government Efficiency (DOGE) before departing mid-2025, followed by a public feud with Trump that summer. The two have since visibly reconciled - sharing dinner at Mar-a-Lago and traveling together to China - with Trump calling him 'a friend of mine again' in June 2026, though reporting characterizes the relationship as a fragile, fluctuating truce rather than steady access.",
+          "influence": 7,
+          "role": "private",
+          "source": "Bloomberg; Fox News; Axios, 2026",
+          "group": "outside-advisors"
         }
       ],
       "relationships": [
@@ -192,7 +521,42 @@
         { "source": "hhs-3", "target": "hhs-1", "type": "senior advisor to" },
         { "source": "usda-1", "target": "potus", "type": "appointed by" },
         { "source": "usda-2", "target": "usda-1", "type": "deputy to" },
-        { "source": "usda-3", "target": "usda-1", "type": "major donor" }
+        { "source": "usda-3", "target": "usda-1", "type": "major donor" },
+        { "source": "interior-1", "target": "potus", "type": "appointed by" },
+        { "source": "interior-2", "target": "interior-1", "type": "deputy to" },
+        { "source": "interior-3", "target": "interior-1", "type": "major donor and longtime backer" },
+        { "source": "commerce-1", "target": "potus", "type": "appointed by" },
+        { "source": "commerce-2", "target": "commerce-1", "type": "deputy to" },
+        { "source": "commerce-3", "target": "commerce-1", "type": "son; controls family trust holding his stake" },
+        { "source": "labor-1", "target": "potus", "type": "appointed by" },
+        { "source": "labor-2", "target": "labor-1", "type": "lobbies on behalf of U.S. Chamber of Commerce" },
+        { "source": "hud-1", "target": "potus", "type": "appointed by" },
+        { "source": "hud-2", "target": "hud-1", "type": "deputy to" },
+        { "source": "hud-3", "target": "hud-1", "type": "lobbies on behalf of Mortgage Bankers Association" },
+        { "source": "dot-1", "target": "potus", "type": "appointed by" },
+        { "source": "dot-2", "target": "dot-1", "type": "deputy to" },
+        { "source": "dot-3", "target": "dot-1", "type": "lobbyist; donor to Secretary's son-in-law's campaign" },
+        { "source": "energy-1", "target": "potus", "type": "appointed by" },
+        { "source": "energy-2", "target": "energy-1", "type": "deputy to" },
+        { "source": "energy-3", "target": "energy-1", "type": "advises via Secretary of Energy Advisory Board" },
+        { "source": "education-1", "target": "potus", "type": "appointed by" },
+        { "source": "education-2", "target": "education-1", "type": "deputy to" },
+        { "source": "education-3", "target": "education-1", "type": "major donor; policy beneficiary" },
+        { "source": "va-1", "target": "potus", "type": "appointed by" },
+        { "source": "va-2", "target": "va-1", "type": "deputy to" },
+        { "source": "va-3", "target": "va-1", "type": "lobbies via Oracle; holds VA records contract" },
+        { "source": "dhs-1", "target": "potus", "type": "appointed by" },
+        { "source": "dhs-2", "target": "dhs-1", "type": "deputy to" },
+        { "source": "dhs-3", "target": "dhs-1", "type": "major donor; GEO Group holds ICE contracts" },
+        { "source": "dhs-4", "target": "dhs-1", "type": "Palantir holds DHS-wide data contract" },
+        { "source": "wh-1", "target": "potus", "type": "chief of staff to" },
+        { "source": "wh-2", "target": "wh-1", "type": "deputy chief of staff under" },
+        { "source": "wh-3", "target": "wh-1", "type": "press secretary under" },
+        { "source": "wh-4", "target": "wh-1", "type": "deputy chief of staff under" },
+        { "source": "adv-1", "target": "potus", "type": "advises via Homeland Security Advisory Council" },
+        { "source": "adv-2", "target": "potus", "type": "informally advises on personnel" },
+        { "source": "adv-3", "target": "potus", "type": "informal envoy for" },
+        { "source": "adv-4", "target": "potus", "type": "informal advisor to" }
       ],
       "groups": [
         { "id": "defense", "label": "Defense" },
@@ -200,7 +564,18 @@
         { "id": "state", "label": "State" },
         { "id": "justice", "label": "Justice" },
         { "id": "hhs", "label": "HHS" },
-        { "id": "agriculture", "label": "Agriculture" }
+        { "id": "agriculture", "label": "Agriculture" },
+        { "id": "interior", "label": "Interior" },
+        { "id": "commerce", "label": "Commerce" },
+        { "id": "labor", "label": "Labor" },
+        { "id": "hud", "label": "HUD" },
+        { "id": "transportation", "label": "Transportation" },
+        { "id": "energy", "label": "Energy" },
+        { "id": "education", "label": "Education" },
+        { "id": "va", "label": "Veterans Affairs" },
+        { "id": "dhs", "label": "Homeland Security" },
+        { "id": "wh-staff", "label": "White House Staff" },
+        { "id": "outside-advisors", "label": "Outside Advisors" }
       ]
     },
     {

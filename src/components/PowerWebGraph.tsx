@@ -87,13 +87,6 @@ export default function PowerWebGraph({
     return map;
   }, [people, relationships]);
 
-  const graphData = useMemo(() => {
-    return {
-      nodes: people.map((p) => ({ ...p })) as GraphNode[],
-      links: relationships.map((r) => ({ ...r })) as GraphLink[],
-    };
-  }, [people, relationships]);
-
   const searchResults = useMemo(() => {
     if (!query.trim()) return [];
     const q = query.trim().toLowerCase();
@@ -110,7 +103,8 @@ export default function PowerWebGraph({
   );
 
   // Shared layout math: vertical tier by influence, horizontal column by group.
-  // Used both to configure the force simulation and to place group header labels.
+  // Used both to seed initial node positions, configure the force simulation,
+  // and place group header labels.
   const layout = useMemo(() => {
     const influences = people.map((p) => p.influence);
     const minInfluence = Math.min(...influences, 0);
@@ -148,6 +142,29 @@ export default function PowerWebGraph({
     return { targetY, targetX, groupLabelPos };
   }, [people, dimensions.height, groups]);
 
+  const graphData = useMemo(() => {
+    return {
+      nodes: people.map((p) => {
+        const x = layout.targetX(p.group) + (Math.random() - 0.5) * 60;
+        return {
+          ...p,
+          x,
+          y: layout.targetY(p.influence) + (Math.random() - 0.5) * 60,
+          // Rigidly pin the column when this sector defines groups: with a
+          // high-degree hub node (everyone connects to the President), the
+          // link/charge forces easily overpower a soft horizontal force for
+          // columns far from center, dragging distant departments back
+          // toward the middle. Fixing fx guarantees column separation
+          // regardless of that tug-of-war (including for ungrouped hub
+          // nodes like the President himself, pinned at the center column).
+          // Sectors with no groups leave x fully free for an organic layout.
+          fx: groups && groups.length > 0 ? x : undefined,
+        };
+      }) as GraphNode[],
+      links: relationships.map((r) => ({ ...r })) as GraphLink[],
+    };
+  }, [people, relationships, layout]);
+
   useEffect(() => {
     const fg = graphRef.current;
     if (!fg || people.length === 0) return;
@@ -168,29 +185,18 @@ export default function PowerWebGraph({
       return force;
     }
 
-    function groupXForce(strength: number) {
-      let nodes: GraphNode[] = [];
-      const force = (alpha: number) => {
-        for (const n of nodes) {
-          if (!n.group || n.x === undefined) continue;
-          const tx = layout.targetX(n.group);
-          const delta = Math.max(-200, Math.min(200, tx - n.x));
-          n.vx = (n.vx ?? 0) + delta * strength * alpha;
-        }
-      };
-      force.initialize = (ns: GraphNode[]) => {
-        nodes = ns;
-      };
-      return force;
-    }
-
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (fg.d3Force("link") as any)?.distance(160).strength(0.3);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (fg.d3Force("charge") as any)?.strength(-220);
     fg.d3Force("y", influenceYForce(0.15));
-    fg.d3Force("x", groups && groups.length > 0 ? groupXForce(0.2) : null);
     fg.d3ReheatSimulation();
+    // Seeded positions are already correct, so fit to them immediately
+    // rather than waiting on onEngineStop (which may fire against a
+    // stale/partial bounding box on large multi-column graphs).
+    fg.zoomToFit(0, 170);
+    const fitTimer = setTimeout(() => fg.zoomToFit(400, 170), 350);
+    return () => clearTimeout(fitTimer);
   }, [graphData, layout, people, groups]);
 
   const jumpToPerson = useCallback(
