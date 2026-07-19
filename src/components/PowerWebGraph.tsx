@@ -106,12 +106,16 @@ export default function PowerWebGraph({
   // Used both to seed initial node positions, configure the force simulation,
   // and place group header labels.
   const layout = useMemo(() => {
+    const hasGroups = !!groups && groups.length > 0;
+
+    // Ungrouped sectors (e.g. Finance, Technology): organic layout where Y
+    // is purely driven by each person's influence, scaled to fill the view.
     const influences = people.map((p) => p.influence);
     const minInfluence = Math.min(...influences, 0);
     const maxInfluence = Math.max(...influences, 1);
     const halfSpread = Math.max(dimensions.height / 2 - 110, 100);
 
-    function targetY(influence: number) {
+    function organicTargetY(influence: number) {
       const t =
         maxInfluence === minInfluence
           ? 0.5
@@ -121,21 +125,55 @@ export default function PowerWebGraph({
       return (0.5 - t) * 2 * halfSpread;
     }
 
-    const groupIndex = new Map<string, number>();
-    (groups ?? []).forEach((g, i) => groupIndex.set(g.id, i));
-    const groupCount = groups?.length ?? 0;
+    // Grouped sectors: wrap columns into a grid of rows instead of one long
+    // horizontal line, so adding more groups grows the graph roughly evenly
+    // in both directions rather than just making it wider.
+    const PER_ROW = 6;
+    const ROW_SPACING = 480;
+    const TIER_SPACING = 130;
+    const HUB_Y = -280; // fixed spot for ungrouped hub nodes (e.g. the President), above row 0
+
+    const groupRow = new Map<string, number>();
+    const groupCol = new Map<string, number>();
+    const rowCounts: number[] = [];
+    (groups ?? []).forEach((g, i) => {
+      const row = Math.floor(i / PER_ROW);
+      groupRow.set(g.id, row);
+      groupCol.set(g.id, i % PER_ROW);
+      rowCounts[row] = (rowCounts[row] ?? 0) + 1;
+    });
+
+    // Rank each group's members by influence (0 = most influential, e.g. the
+    // secretary) so within-row vertical tiering stays local to that group.
+    const localRank = new Map<string, number>();
+    (groups ?? []).forEach((g) => {
+      const members = people
+        .filter((p) => p.group === g.id)
+        .slice()
+        .sort((a, b) => b.influence - a.influence);
+      members.forEach((p, i) => localRank.set(p.id, i));
+    });
 
     function targetX(groupId: string | undefined) {
-      if (!groupId || !groupIndex.has(groupId)) return 0;
-      const idx = groupIndex.get(groupId)!;
-      return (idx - (groupCount - 1) / 2) * GROUP_COLUMN_SPACING;
+      if (!hasGroups || !groupId || !groupRow.has(groupId)) return 0;
+      const row = groupRow.get(groupId)!;
+      const count = rowCounts[row];
+      return (groupCol.get(groupId)! - (count - 1) / 2) * GROUP_COLUMN_SPACING;
+    }
+
+    function targetY(person: { id: string; influence: number; group?: string }) {
+      if (!hasGroups) return organicTargetY(person.influence);
+      if (!person.group || !groupRow.has(person.group)) return HUB_Y;
+      const row = groupRow.get(person.group)!;
+      const rank = localRank.get(person.id) ?? 0;
+      return row * ROW_SPACING + rank * TIER_SPACING;
     }
 
     const groupLabelPos = new Map<string, { x: number; y: number }>();
     (groups ?? []).forEach((g) => {
       const members = people.filter((p) => p.group === g.id);
       if (members.length === 0) return;
-      const topY = Math.min(...members.map((p) => targetY(p.influence)));
+      const topY = Math.min(...members.map((p) => targetY(p)));
       groupLabelPos.set(g.id, { x: targetX(g.id), y: topY - 60 });
     });
 
@@ -143,27 +181,31 @@ export default function PowerWebGraph({
   }, [people, dimensions.height, groups]);
 
   const graphData = useMemo(() => {
+    const hasGroups = !!groups && groups.length > 0;
     return {
       nodes: people.map((p) => {
         const x = layout.targetX(p.group) + (Math.random() - 0.5) * 60;
+        const y = layout.targetY(p) + (Math.random() - 0.5) * 60;
         return {
           ...p,
           x,
-          y: layout.targetY(p.influence) + (Math.random() - 0.5) * 60,
-          // Rigidly pin the column when this sector defines groups: with a
+          y,
+          // Rigidly pin position when this sector defines groups: with a
           // high-degree hub node (everyone connects to the President), the
-          // link/charge forces easily overpower a soft horizontal force for
-          // columns far from center, dragging distant departments back
-          // toward the middle. Fixing fx guarantees column separation
-          // regardless of that tug-of-war (including for ungrouped hub
-          // nodes like the President himself, pinned at the center column).
-          // Sectors with no groups leave x fully free for an organic layout.
-          fx: groups && groups.length > 0 ? x : undefined,
+          // link/charge forces easily overpower a soft positional force for
+          // columns/rows far from center, dragging distant departments back
+          // toward the middle. Fixing fx/fy guarantees the grid layout
+          // holds regardless of that tug-of-war (including for ungrouped
+          // hub nodes like the President himself, pinned centrally above
+          // row 0). Sectors with no groups leave x/y fully free for an
+          // organic layout.
+          fx: hasGroups ? x : undefined,
+          fy: hasGroups ? y : undefined,
         };
       }) as GraphNode[],
       links: relationships.map((r) => ({ ...r })) as GraphLink[],
     };
-  }, [people, relationships, layout]);
+  }, [people, relationships, layout, groups]);
 
   useEffect(() => {
     const fg = graphRef.current;
@@ -174,7 +216,7 @@ export default function PowerWebGraph({
       const force = (alpha: number) => {
         for (const n of nodes) {
           if (n.y === undefined) continue;
-          const ty = layout.targetY(n.influence);
+          const ty = layout.targetY(n);
           const delta = Math.max(-200, Math.min(200, ty - n.y));
           n.vy = (n.vy ?? 0) + delta * strength * alpha;
         }
