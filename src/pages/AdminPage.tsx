@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import { sectorsData } from "../data/sectors";
+import PowerWebGraph from "../components/PowerWebGraph";
 import type { Person, PersonGroup, Relationship, Sector, SectorsData } from "../types/network";
 
 function slugify(name: string) {
@@ -56,7 +57,14 @@ export default function AdminPage() {
   };
 
   const addPerson = (sectorId: string) => {
-    updateSector(sectorId, (s) => ({ ...s, people: [...s.people, emptyPerson()] }));
+    updateSector(sectorId, (s) => ({ ...s, people: [emptyPerson(), ...s.people] }));
+  };
+
+  const movePerson = (sectorId: string, personId: string, x: number, y: number) => {
+    updateSector(sectorId, (s) => ({
+      ...s,
+      people: s.people.map((p) => (p.id === personId ? { ...p, manualX: x, manualY: y } : p)),
+    }));
   };
 
   const deletePerson = (sectorId: string, personId: string) => {
@@ -100,7 +108,7 @@ export default function AdminPage() {
     const id = makeId("group");
     updateSector(sectorId, (s) => ({
       ...s,
-      groups: [...(s.groups ?? []), { id, label: "New Group" }],
+      groups: [{ id, label: "New Group" }, ...(s.groups ?? [])],
     }));
   };
 
@@ -161,6 +169,31 @@ export default function AdminPage() {
           ))}
         </select>
       </header>
+
+      <section className="border-b border-slate-800 px-6 py-6">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="mb-2 text-base font-semibold text-slate-100">Preview &amp; rearrange</h2>
+          <p className="mb-3 text-sm text-slate-500">
+            Drag any dot to reposition it. Positions are saved along with everything else when you hit Save &amp;
+            publish below.
+          </p>
+          <div className="h-[560px] overflow-hidden rounded-lg border border-slate-800">
+            <PowerWebGraph
+              key={sector.id}
+              title={sector.name}
+              description={sector.description}
+              backTo="/"
+              backLabel="Sectors"
+              people={sector.people}
+              relationships={sector.relationships}
+              groups={sector.groups}
+              embedded
+              editable
+              onNodeMove={(personId, x, y) => movePerson(sector.id, personId, x, y)}
+            />
+          </div>
+        </div>
+      </section>
 
       <div className="mx-auto max-w-4xl space-y-10 px-6 py-8">
         {/* Groups */}
