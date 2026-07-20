@@ -7,6 +7,15 @@
       "available": true,
       "people": [
         {
+          "id": "person-mrtnhdet",
+          "name": "Larry Elison",
+          "title": "CEO",
+          "bio": "Testing",
+          "influence": 5,
+          "role": "private",
+          "group": "state"
+        },
+        {
           "id": "potus",
           "name": "Donald Trump",
           "title": "President of the United States",
@@ -263,6 +272,11 @@
         {
           "source": "usda-3",
           "target": "usda-1",
+          "type": "major donor"
+        },
+        {
+          "source": "person-mrtnhdet",
+          "target": "state-1",
           "type": "major donor"
         }
       ],
