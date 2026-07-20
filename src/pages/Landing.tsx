@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import WebBackground from "../components/WebBackground";
+import WebTitle from "../components/WebTitle";
 import { sectorsData } from "../data/sectors";
 
 export default function Landing() {
@@ -7,10 +8,8 @@ export default function Landing() {
     <div className="relative min-h-screen overflow-hidden">
       <WebBackground />
       <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-6 py-16">
-        <div className="mb-14 text-center">
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-100 sm:text-5xl">
-            Charlotte&rsquo;s Web
-          </h1>
+        <div className="mb-10 text-center">
+          <WebTitle />
           <p className="mt-4 text-balance text-base text-slate-400 sm:text-lg">
             An interactive map of influence &mdash; who holds power across America&rsquo;s
             sectors, and how they&rsquo;re connected.
