@@ -10,10 +10,9 @@
           "id": "person-mrtnhdet",
           "name": "Larry Elison",
           "title": "CEO",
-          "bio": "Testing",
-          "influence": 5,
-          "role": "private",
-          "group": "state"
+          "bio": "Larry Ellison is a billionaire entrepreneur, best known as the co-founder, executive chairman, and chief technology officer (CTO) of Oracle Corporation, one of the world's largest software companies.\n\nLarry Ellison is widely recognized as one of the largest private donors to the Israel Defense Forces (IDF) through the non-profit organization Friends of the Israel Defense Forces (FIDF).",
+          "influence": 8,
+          "role": "private"
         },
         {
           "id": "potus",
