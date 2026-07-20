@@ -13,6 +13,9 @@ export interface Person {
   source?: string;
   /** Optional cluster id (e.g. a department) this person belongs to, used to group and label nodes spatially */
   group?: string;
+  /** Manually dragged position (set via the admin panel), overrides the automatic layout for this node */
+  manualX?: number;
+  manualY?: number;
 }
 
 export interface Relationship {

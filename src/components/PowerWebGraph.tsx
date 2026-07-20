@@ -12,6 +12,8 @@ interface GraphNode extends NodeObject {
   role?: "official" | "private";
   source?: string;
   group?: string;
+  manualX?: number;
+  manualY?: number;
   x?: number;
   y?: number;
 }
@@ -40,6 +42,12 @@ interface PowerWebGraphProps {
   people: Person[];
   relationships: Relationship[];
   groups?: PersonGroup[];
+  /** Renders without the full-page header/search chrome, sized to fill its parent container instead of the viewport */
+  embedded?: boolean;
+  /** Allows dragging nodes to a custom position */
+  editable?: boolean;
+  /** Called with a person's id and new position after a drag ends (only fires when editable) */
+  onNodeMove?: (personId: string, x: number, y: number) => void;
 }
 
 export default function PowerWebGraph({
@@ -50,6 +58,9 @@ export default function PowerWebGraph({
   people,
   relationships,
   groups,
+  embedded = false,
+  editable = false,
+  onNodeMove,
 }: PowerWebGraphProps) {
   const graphRef = useRef<ForceGraphMethods<GraphNode, GraphLink> | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -184,23 +195,22 @@ export default function PowerWebGraph({
     const hasGroups = !!groups && groups.length > 0;
     return {
       nodes: people.map((p) => {
-        const x = layout.targetX(p.group) + (Math.random() - 0.5) * 60;
-        const y = layout.targetY(p) + (Math.random() - 0.5) * 60;
+        const x = p.manualX ?? layout.targetX(p.group) + (Math.random() - 0.5) * 60;
+        const y = p.manualY ?? layout.targetY(p) + (Math.random() - 0.5) * 60;
         return {
           ...p,
           x,
           y,
-          // Rigidly pin position when this sector defines groups: with a
-          // high-degree hub node (everyone connects to the President), the
-          // link/charge forces easily overpower a soft positional force for
+          // Rigidly pin position when this sector defines groups, or when a
+          // person has a manually dragged position: with a high-degree hub
+          // node (everyone connects to the President), the link/charge
+          // forces easily overpower a soft positional force for
           // columns/rows far from center, dragging distant departments back
-          // toward the middle. Fixing fx/fy guarantees the grid layout
-          // holds regardless of that tug-of-war (including for ungrouped
-          // hub nodes like the President himself, pinned centrally above
-          // row 0). Sectors with no groups leave x/y fully free for an
-          // organic layout.
-          fx: hasGroups ? x : undefined,
-          fy: hasGroups ? y : undefined,
+          // toward the middle. Fixing fx/fy guarantees the layout holds
+          // regardless of that tug-of-war. Sectors with no groups leave
+          // unpinned nodes' x/y fully free for an organic layout.
+          fx: hasGroups || p.manualX !== undefined ? x : undefined,
+          fy: hasGroups || p.manualY !== undefined ? y : undefined,
         };
       }) as GraphNode[],
       links: relationships.map((r) => ({ ...r })) as GraphLink[],
@@ -267,44 +277,46 @@ export default function PowerWebGraph({
   const hasPrivateIndividuals = people.some((p) => p.role === "private");
 
   return (
-    <div className="flex h-screen w-screen flex-col bg-web-bg text-slate-200">
-      <header className="z-20 flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 bg-web-panel/80 px-6 py-4 backdrop-blur-sm">
-        <div className="flex items-center gap-4">
-          <Link to={backTo} className="text-sm text-slate-400 transition-colors hover:text-sky-400">
-            &larr; {backLabel}
-          </Link>
-          <div>
-            <h1 className="text-xl font-semibold text-slate-100">{title}</h1>
-            <p className="text-xs text-slate-500">{description}</p>
+    <div className={embedded ? "flex h-full w-full flex-col bg-web-bg text-slate-200" : "flex h-screen w-screen flex-col bg-web-bg text-slate-200"}>
+      {!embedded && (
+        <header className="z-20 flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 bg-web-panel/80 px-6 py-4 backdrop-blur-sm">
+          <div className="flex items-center gap-4">
+            <Link to={backTo} className="text-sm text-slate-400 transition-colors hover:text-sky-400">
+              &larr; {backLabel}
+            </Link>
+            <div>
+              <h1 className="text-xl font-semibold text-slate-100">{title}</h1>
+              <p className="text-xs text-slate-500">{description}</p>
+            </div>
           </div>
-        </div>
 
-        <div className="relative w-64">
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search for a person..."
-            className="w-full rounded-lg border border-slate-700 bg-web-bg px-3 py-2 text-sm text-slate-200 placeholder-slate-500 outline-none transition-colors focus:border-sky-500"
-          />
-          {searchResults.length > 0 && (
-            <ul className="absolute left-0 right-0 top-full z-30 mt-1 overflow-hidden rounded-lg border border-slate-700 bg-web-panel shadow-xl">
-              {searchResults.map((p) => (
-                <li key={p.id}>
-                  <button
-                    onClick={() => jumpToPerson(p.id)}
-                    className="block w-full px-3 py-2 text-left text-sm text-slate-200 hover:bg-sky-500/10 hover:text-sky-300"
-                  >
-                    <span className="font-medium">{p.name}</span>
-                    <span className="ml-2 text-xs text-slate-500">{p.title}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </header>
+          <div className="relative w-64">
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search for a person..."
+              className="w-full rounded-lg border border-slate-700 bg-web-bg px-3 py-2 text-sm text-slate-200 placeholder-slate-500 outline-none transition-colors focus:border-sky-500"
+            />
+            {searchResults.length > 0 && (
+              <ul className="absolute left-0 right-0 top-full z-30 mt-1 overflow-hidden rounded-lg border border-slate-700 bg-web-panel shadow-xl">
+                {searchResults.map((p) => (
+                  <li key={p.id}>
+                    <button
+                      onClick={() => jumpToPerson(p.id)}
+                      className="block w-full px-3 py-2 text-left text-sm text-slate-200 hover:bg-sky-500/10 hover:text-sky-300"
+                    >
+                      <span className="font-medium">{p.name}</span>
+                      <span className="ml-2 text-xs text-slate-500">{p.title}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </header>
+      )}
 
-      <div ref={containerRef} className="relative flex-1 overflow-hidden">
+      <div ref={containerRef} className={embedded ? "relative h-full w-full overflow-hidden" : "relative flex-1 overflow-hidden"}>
         {hasPrivateIndividuals && (
           <div className="pointer-events-none absolute bottom-4 left-4 z-20 rounded-lg border border-slate-800 bg-web-panel/80 px-3 py-2 text-xs text-slate-400 backdrop-blur-sm">
             <div className="mb-1 flex items-center gap-2">
@@ -434,6 +446,16 @@ export default function PowerWebGraph({
           }}
           linkDirectionalParticleWidth={2}
           linkDirectionalParticleColor={(l) => (isPrivateLink(l as unknown as GraphLink) ? "#fbbf24" : "#7dd3fc")}
+          enableNodeDrag={editable}
+          onNodeDragEnd={(node) => {
+            const n = node as GraphNode;
+            // Pin it exactly where dropped so it doesn't drift from other forces.
+            n.fx = n.x;
+            n.fy = n.y;
+            if (editable && onNodeMove && n.x !== undefined && n.y !== undefined) {
+              onNodeMove(n.id, n.x, n.y);
+            }
+          }}
           onNodeClick={handleNodeClick}
           onBackgroundClick={handleBackgroundClick}
           onEngineStop={() => graphRef.current?.zoomToFit(400, 170)}
