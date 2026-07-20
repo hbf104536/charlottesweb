@@ -7,12 +7,24 @@
       "available": true,
       "people": [
         {
+          "id": "person-mrtvnldw",
+          "name": "Benjamin Netanyahu",
+          "title": "Prime Minister of Israel",
+          "bio": "Benjamin Netanyahu is an Israeli politician and diplomat who is currently serving as the Prime Minister of Israel, a position he has held since December 2022. Nicknamed \"Bibi\", he is the leader of the conservative Likud party and stands as Israel's longest-serving prime minister in history, having previously held the office from 1996 to 1999 and from 2009 to 2021.",
+          "influence": 10,
+          "role": "official",
+          "manualX": -486.7168033181122,
+          "manualY": -545.5859725286865
+        },
+        {
           "id": "person-mrtnhdet",
           "name": "Larry Elison",
           "title": "CEO",
           "bio": "Larry Ellison is a billionaire entrepreneur, best known as the co-founder, executive chairman, and chief technology officer (CTO) of Oracle Corporation, one of the world's largest software companies.\n\nLarry Ellison is widely recognized as one of the largest private donors to the Israel Defense Forces (IDF) through the non-profit organization Friends of the Israel Defense Forces (FIDF).",
           "influence": 8,
-          "role": "private"
+          "role": "private",
+          "manualX": -310.4358874962298,
+          "manualY": 81.62319954289842
         },
         {
           "id": "potus",
@@ -20,7 +32,9 @@
           "title": "President of the United States",
           "bio": "47th President of the United States, inaugurated January 20, 2025. Appoints and directs the heads of all executive departments.",
           "influence": 10,
-          "role": "official"
+          "role": "official",
+          "manualX": 1.5344567458221847,
+          "manualY": -262.39097045864065
         },
         {
           "id": "dod-1",
@@ -276,7 +290,12 @@
         {
           "source": "person-mrtnhdet",
           "target": "state-1",
-          "type": "major donor"
+          "type": "Major Super PAC Donor & Campaign Fundraiser for"
+        },
+        {
+          "source": "person-mrtnhdet",
+          "target": "person-mrtvnldw",
+          "type": "friends with (Netanyahu’s family vacations on Ellison's private Hawaii Island)"
         }
       ],
       "groups": [
