@@ -7,6 +7,14 @@
       "available": true,
       "people": [
         {
+          "id": "person-mrtx8wru",
+          "name": "Howard Lutnick",
+          "title": "Secretary of Commerce",
+          "bio": "Howard Lutnick is a Jewish American billionaire businessman, Wall Street executive, and government official who serves as the 41st United States Secretary of Commerce. Howard Lutnick has deep philanthropic, ideological, and political ties to Israel, and he maintains a direct working relationship with Prime Minister Benjamin Netanyahu. Lutnick admitted that Trump’s explicit promises to protect Israel were a major catalyst for his decision to co-chair the Trump-Vance transition team and join the administration. According to a profile by Jewish Insider, Trump personally assured Lutnick and his wife that he would \"be the best president for Israel\".",
+          "influence": 8,
+          "role": "official"
+        },
+        {
           "id": "person-mrtwqd8u",
           "name": "Jared Kushner",
           "title": "United States Special Envoy",
@@ -348,6 +356,16 @@
           "source": "person-mrtwqd8u",
           "target": "potus",
           "type": "son-in-law & advisor of"
+        },
+        {
+          "source": "person-mrtx8wru",
+          "target": "potus",
+          "type": "appointed by and advises"
+        },
+        {
+          "source": "person-mrtx8wru",
+          "target": "person-mrtvnldw",
+          "type": "works with"
         }
       ],
       "groups": [
