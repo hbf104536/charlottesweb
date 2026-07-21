@@ -12,7 +12,9 @@
           "title": "Secretary of Commerce",
           "bio": "Howard Lutnick is a Jewish American billionaire businessman, Wall Street executive, and government official who serves as the 41st United States Secretary of Commerce. Howard Lutnick has deep philanthropic, ideological, and political ties to Israel, and he maintains a direct working relationship with Prime Minister Benjamin Netanyahu. Lutnick admitted that Trump’s explicit promises to protect Israel were a major catalyst for his decision to co-chair the Trump-Vance transition team and join the administration. According to a profile by Jewish Insider, Trump personally assured Lutnick and his wife that he would \"be the best president for Israel\".",
           "influence": 8,
-          "role": "official"
+          "role": "official",
+          "manualX": -332.5952525448355,
+          "manualY": -549.1360594077852
         },
         {
           "id": "person-mrtwqd8u",
@@ -21,8 +23,8 @@
           "bio": "Jared Kushner is a Jewish American businessman, investor, and high-ranking diplomat currently serving as a Special Envoy for Peace in the second administration of his father-in-law, U.S. President Donald Trump. Kushner married Ivanka Trump in a Jewish ceremony at the Trump National Golf Club, following Ivanka’s conversion to Orthodox Judaism. Kushner maintains deep, decades-long personal, financial, and ideological ties to Israeli Prime Minister Benjamin Netanyahu and the Israeli government. \n",
           "influence": 5,
           "role": "official",
-          "manualX": -328.43460350133876,
-          "manualY": -579.2051197659846
+          "manualX": -417.7191149250358,
+          "manualY": -454.67570502376265
         },
         {
           "id": "person-mrtwhy7x",
@@ -31,8 +33,8 @@
           "bio": "Stephen N. Miller is a Jewish American political advisor serving as White House deputy chief of staff for policy and homeland security advisor since 2025.\n\nAs a core policy advisor to Donald Trump, Miller supported major actions favoring the Israeli government. These include moving the U.S. Embassy to Jerusalem, cutting funding for Palestinian aid programs, and supporting the brokering of the Abraham Accords, which normalized relations between Israel and several Arab nations.\n\nMiller maintains strong professional relationships with key conservative pro-Israel figures. His 2020 wedding was officiated by Rabbi Aryeh Lightstone, who served as a senior advisor to David Friedman (the former U.S. Ambassador to Israel and a close ally of Prime Minister Benjamin Netanyahu).",
           "influence": 9,
           "role": "official",
-          "manualX": -125.16491546745021,
-          "manualY": -641.467128478033
+          "manualX": -188.16974725842434,
+          "manualY": -609.964712582546
         },
         {
           "id": "person-mrtwadkf",
@@ -46,7 +48,7 @@
         },
         {
           "id": "person-mrtvnldw",
-          "name": "Benjamin Netanyahu",
+          "name": "Israel / Benjamin Netanyahu",
           "title": "Prime Minister of Israel",
           "bio": "Benjamin Netanyahu is an Israeli politician and diplomat who is currently serving as the Prime Minister of Israel, a position he has held since December 2022. Nicknamed \"Bibi\", he is the leader of the conservative Likud party and stands as Israel's longest-serving prime minister in history, having previously held the office from 1996 to 1999 and from 2009 to 2021.",
           "influence": 10,
