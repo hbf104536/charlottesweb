@@ -323,6 +323,11 @@
           "source": "person-mrtwadkf",
           "target": "hhs-1",
           "type": "close friend of (Boteach has noted that he spent thousands of hours teaching Torah to Kennedy over the course of their friendship. Boteach has maintained their alliance, drafting speeches for Kennedy and continually framing him as a uniquely strong advocate for Israel)"
+        },
+        {
+          "source": "person-mrtwhy7x",
+          "target": "potus",
+          "type": "appointed by"
         }
       ],
       "groups": [
