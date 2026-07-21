@@ -7,6 +7,26 @@
       "available": true,
       "people": [
         {
+          "id": "person-mrtwhy7x",
+          "name": "Stephen Miller",
+          "title": "White House Deputy Chief of Staff",
+          "bio": "Stephen N. Miller is a Jewish American political advisor serving as White House deputy chief of staff for policy and homeland security advisor since 2025.\n\nAs a core policy advisor to Donald Trump, Miller supported major actions favoring the Israeli government. These include moving the U.S. Embassy to Jerusalem, cutting funding for Palestinian aid programs, and supporting the brokering of the Abraham Accords, which normalized relations between Israel and several Arab nations.\n\nMiller maintains strong professional relationships with key conservative pro-Israel figures. His 2020 wedding was officiated by Rabbi Aryeh Lightstone, who served as a senior advisor to David Friedman (the former U.S. Ambassador to Israel and a close ally of Prime Minister Benjamin Netanyahu).",
+          "influence": 9,
+          "role": "official",
+          "manualX": 491.39926095151026,
+          "manualY": -286.9363057364912
+        },
+        {
+          "id": "person-mrtwadkf",
+          "name": "Rabbi Shmuley Boteach",
+          "title": "Media commentator",
+          "bio": "Prominent Orthodox Jewish author, media commentator, and public figure, frequently dubbed \"America’s Rabbi\". He is well-known for his expansive media presence, authorship of over 30 books, and high-profile relationships with various celebrities, political figures, and international leaders.",
+          "influence": 4,
+          "role": "private",
+          "manualX": 360.2601511283352,
+          "manualY": 143.89893733849897
+        },
+        {
           "id": "person-mrtvnldw",
           "name": "Benjamin Netanyahu",
           "title": "Prime Minister of Israel",
@@ -23,8 +43,8 @@
           "bio": "Larry Ellison is a Jewish billionaire entrepreneur, best known as the co-founder, executive chairman, and chief technology officer (CTO) of Oracle Corporation, one of the world's largest software companies.\n\nLarry Ellison is widely recognized as one of the largest private donors to the Israel Defense Forces (IDF) through the non-profit organization Friends of the Israel Defense Forces (FIDF).",
           "influence": 8,
           "role": "private",
-          "manualX": -455.9726645217579,
-          "manualY": -207.12234104497497
+          "manualX": -537.3819139951489,
+          "manualY": -249.81255723224098
         },
         {
           "id": "potus",
@@ -33,8 +53,8 @@
           "bio": "47th President of the United States, inaugurated January 20, 2025. Appoints and directs the heads of all executive departments.",
           "influence": 10,
           "role": "official",
-          "manualX": 1.5344567458221847,
-          "manualY": -262.39097045864065
+          "manualX": 22.24294166734232,
+          "manualY": -448.76733475232186
         },
         {
           "id": "dod-1",
@@ -155,7 +175,9 @@
           "influence": 5,
           "role": "private",
           "source": "Bloomberg Law; STAT News, Mar 2026",
-          "group": "hhs"
+          "group": "hhs",
+          "manualX": 561.6567696189387,
+          "manualY": 130.5452434853178
         },
         {
           "id": "hhs-3",
@@ -296,6 +318,11 @@
           "source": "person-mrtnhdet",
           "target": "person-mrtvnldw",
           "type": "friends with (Netanyahu’s family vacations on Ellison's private Hawaii Island)"
+        },
+        {
+          "source": "person-mrtwadkf",
+          "target": "hhs-1",
+          "type": "close friend of (Boteach has noted that he spent thousands of hours teaching Torah to Kennedy over the course of their friendship. Boteach has maintained their alliance, drafting speeches for Kennedy and continually framing him as a uniquely strong advocate for Israel)"
         }
       ],
       "groups": [
