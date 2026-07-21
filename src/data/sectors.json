@@ -7,6 +7,14 @@
       "available": true,
       "people": [
         {
+          "id": "person-mrtwqd8u",
+          "name": "Jared Kushner",
+          "title": "United States Special Envoy",
+          "bio": "Jared Kushner is a Jewish American businessman, investor, and high-ranking diplomat currently serving as a Special Envoy for Peace in the second administration of his father-in-law, U.S. President Donald Trump. Kushner married Ivanka Trump in a Jewish ceremony at the Trump National Golf Club, following Ivanka’s conversion to Orthodox Judaism. Kushner maintains deep, decades-long personal, financial, and ideological ties to Israeli Prime Minister Benjamin Netanyahu and the Israeli government. \n",
+          "influence": 5,
+          "role": "official"
+        },
+        {
           "id": "person-mrtwhy7x",
           "name": "Stephen Miller",
           "title": "White House Deputy Chief of Staff",
@@ -328,6 +336,11 @@
           "source": "person-mrtwhy7x",
           "target": "potus",
           "type": "appointed by"
+        },
+        {
+          "source": "person-mrtwqd8u",
+          "target": "person-mrtvnldw",
+          "type": "family friend of (Netanyahu was a close friend of Jared's father, Charles Kushner, a prominent real estate developer and major donor to Israeli and Jewish causes. When Netanyahu visited the United States during Jared's youth, he stayed at the Kushner family home in New Jersey. Famously, the teenage Jared Kushner surrendered his own bedroom to Netanyahu and slept in the basement.)"
         }
       ],
       "groups": [
