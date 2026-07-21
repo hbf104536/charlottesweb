@@ -7,6 +7,16 @@
       "available": true,
       "people": [
         {
+          "id": "person-mrtxp6sq",
+          "name": "Steve Witkoff",
+          "title": "U.S. Special Envoy to the Middle East",
+          "bio": "is an American real estate billionaire, developer, and high-level diplomat who currently serves as the U.S. Special Envoy to the Middle East and Special Envoy for Peace Missions under President Donald Trump. A close friend and confidant of Trump for nearly 40 years, Witkoff has emerged as a central, \"all-purpose\" diplomatic emissary tasked with handling major international conflicts. Witkoff serves as a key financial bridge between Donald Trump and the pro-Israel American business community. He has raised massive amounts of political cash from Jewish and pro-Israel donors. Witkoff was present at Netanyahu's joint address to the U.S. Congress in July 2024 and has vocally praised the Prime Minister's leadership at public rallies and community events.",
+          "influence": 8,
+          "role": "official",
+          "manualX": -102.01741007405212,
+          "manualY": -654.2049810732808
+        },
+        {
           "id": "person-mrtx8wru",
           "name": "Howard Lutnick",
           "title": "Secretary of Commerce",
@@ -33,18 +43,18 @@
           "bio": "Stephen N. Miller is a Jewish American political advisor serving as White House deputy chief of staff for policy and homeland security advisor since 2025.\n\nAs a core policy advisor to Donald Trump, Miller supported major actions favoring the Israeli government. These include moving the U.S. Embassy to Jerusalem, cutting funding for Palestinian aid programs, and supporting the brokering of the Abraham Accords, which normalized relations between Israel and several Arab nations.\n\nMiller maintains strong professional relationships with key conservative pro-Israel figures. His 2020 wedding was officiated by Rabbi Aryeh Lightstone, who served as a senior advisor to David Friedman (the former U.S. Ambassador to Israel and a close ally of Prime Minister Benjamin Netanyahu).",
           "influence": 9,
           "role": "official",
-          "manualX": -188.16974725842434,
-          "manualY": -609.964712582546
+          "manualX": -210.14706552406955,
+          "manualY": -607.9667745583964
         },
         {
           "id": "person-mrtwadkf",
           "name": "Rabbi Shmuley Boteach",
           "title": "Media commentator",
-          "bio": "Prominent Orthodox Jewish author, media commentator, and public figure, frequently dubbed \"America’s Rabbi\". He is well-known for his expansive media presence, authorship of over 30 books, and high-profile relationships with various celebrities, political figures, and international leaders.",
+          "bio": "Prominent Orthodox Jewish author, media commentator, and public figure, frequently dubbed \"America’s Rabbi\". He is well-known for his expansive media presence, authorship of over 30 books, and high-profile relationships with various celebrities, political figures, and international leaders. Boteach has noted that he spent thousands of hours teaching Torah to Kennedy over the course of their friendship. Boteach has maintained their alliance, drafting speeches for Kennedy and continually framing him as a uniquely strong advocate for Israel.",
           "influence": 4,
           "role": "private",
-          "manualX": 360.2601511283352,
-          "manualY": 143.89893733849897
+          "manualX": 991.3019832145388,
+          "manualY": -503.09845683341575
         },
         {
           "id": "person-mrtvnldw",
@@ -53,8 +63,8 @@
           "bio": "Benjamin Netanyahu is an Israeli politician and diplomat who is currently serving as the Prime Minister of Israel, a position he has held since December 2022. Nicknamed \"Bibi\", he is the leader of the conservative Likud party and stands as Israel's longest-serving prime minister in history, having previously held the office from 1996 to 1999 and from 2009 to 2021.",
           "influence": 10,
           "role": "official",
-          "manualX": -657.1215631543005,
-          "manualY": -841.0894602075984
+          "manualX": -691.3277255178331,
+          "manualY": -977.9141096617288
         },
         {
           "id": "person-mrtnhdet",
@@ -73,8 +83,8 @@
           "bio": "47th President of the United States, inaugurated January 20, 2025. Appoints and directs the heads of all executive departments.",
           "influence": 10,
           "role": "official",
-          "manualX": 22.24294166734232,
-          "manualY": -448.76733475232186
+          "manualX": 40.435564226650634,
+          "manualY": -339.61159939647223
         },
         {
           "id": "dod-1",
@@ -92,7 +102,9 @@
           "bio": "Co-founder and former CEO of Cerberus Capital Management, a private-equity firm with extensive defense-industry holdings including past ownership of DynCorp International. Now serves as the Pentagon's chief operating officer. Confirmed March 14, 2025.",
           "influence": 6,
           "role": "official",
-          "group": "defense"
+          "group": "defense",
+          "manualX": -865.7858002815445,
+          "manualY": 88.55993764979348
         },
         {
           "id": "dod-3",
@@ -176,7 +188,9 @@
           "influence": 5,
           "role": "private",
           "source": "Buffalo News; Rolling Stone; DOJ Clemency Grants records",
-          "group": "justice"
+          "group": "justice",
+          "manualX": 70.92408171270746,
+          "manualY": 232.17523084378342
         },
         {
           "id": "hhs-1",
@@ -342,7 +356,7 @@
         {
           "source": "person-mrtwadkf",
           "target": "hhs-1",
-          "type": "close friend of (Boteach has noted that he spent thousands of hours teaching Torah to Kennedy over the course of their friendship. Boteach has maintained their alliance, drafting speeches for Kennedy and continually framing him as a uniquely strong advocate for Israel)"
+          "type": "close friend of"
         },
         {
           "source": "person-mrtwhy7x",
@@ -371,6 +385,21 @@
         },
         {
           "source": "person-mrtwhy7x",
+          "target": "person-mrtvnldw",
+          "type": "strong supporter of"
+        },
+        {
+          "source": "person-mrtxp6sq",
+          "target": "person-mrtvnldw",
+          "type": "strong supporter of"
+        },
+        {
+          "source": "person-mrtxp6sq",
+          "target": "potus",
+          "type": "appointed by & advises"
+        },
+        {
+          "source": "person-mrtwadkf",
           "target": "person-mrtvnldw",
           "type": "strong supporter of"
         }
