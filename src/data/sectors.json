@@ -342,12 +342,12 @@
         {
           "source": "person-mrtwqd8u",
           "target": "person-mrtvnldw",
-          "type": "family friend of (Netanyahu was a close friend of Jared's father, Charles Kushner, a prominent real estate developer and major donor to Israeli and Jewish causes. When Netanyahu visited the United States during Jared's youth, he stayed at the Kushner family home in New Jersey. Famously, the teenage Jared Kushner surrendered his own bedroom to Netanyahu and slept in the basement.)"
+          "type": "family friend of (When Netanyahu visited the United States during Jared's youth, he stayed at the Kushner family home in New Jersey. Famously, the teenage Jared Kushner surrendered his own bedroom to Netanyahu and slept in the basement)"
         },
         {
           "source": "person-mrtwqd8u",
           "target": "potus",
-          "type": "son-in-law of"
+          "type": "son-in-law & advisor of"
         }
       ],
       "groups": [
