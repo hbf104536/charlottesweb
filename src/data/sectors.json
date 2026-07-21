@@ -12,7 +12,9 @@
           "title": "United States Special Envoy",
           "bio": "Jared Kushner is a Jewish American businessman, investor, and high-ranking diplomat currently serving as a Special Envoy for Peace in the second administration of his father-in-law, U.S. President Donald Trump. Kushner married Ivanka Trump in a Jewish ceremony at the Trump National Golf Club, following Ivanka’s conversion to Orthodox Judaism. Kushner maintains deep, decades-long personal, financial, and ideological ties to Israeli Prime Minister Benjamin Netanyahu and the Israeli government. \n",
           "influence": 5,
-          "role": "official"
+          "role": "official",
+          "manualX": -328.43460350133876,
+          "manualY": -579.2051197659846
         },
         {
           "id": "person-mrtwhy7x",
@@ -21,8 +23,8 @@
           "bio": "Stephen N. Miller is a Jewish American political advisor serving as White House deputy chief of staff for policy and homeland security advisor since 2025.\n\nAs a core policy advisor to Donald Trump, Miller supported major actions favoring the Israeli government. These include moving the U.S. Embassy to Jerusalem, cutting funding for Palestinian aid programs, and supporting the brokering of the Abraham Accords, which normalized relations between Israel and several Arab nations.\n\nMiller maintains strong professional relationships with key conservative pro-Israel figures. His 2020 wedding was officiated by Rabbi Aryeh Lightstone, who served as a senior advisor to David Friedman (the former U.S. Ambassador to Israel and a close ally of Prime Minister Benjamin Netanyahu).",
           "influence": 9,
           "role": "official",
-          "manualX": 491.39926095151026,
-          "manualY": -286.9363057364912
+          "manualX": -125.16491546745021,
+          "manualY": -641.467128478033
         },
         {
           "id": "person-mrtwadkf",
@@ -41,8 +43,8 @@
           "bio": "Benjamin Netanyahu is an Israeli politician and diplomat who is currently serving as the Prime Minister of Israel, a position he has held since December 2022. Nicknamed \"Bibi\", he is the leader of the conservative Likud party and stands as Israel's longest-serving prime minister in history, having previously held the office from 1996 to 1999 and from 2009 to 2021.",
           "influence": 10,
           "role": "official",
-          "manualX": -486.7168033181122,
-          "manualY": -545.5859725286865
+          "manualX": -657.1215631543005,
+          "manualY": -841.0894602075984
         },
         {
           "id": "person-mrtnhdet",
@@ -51,8 +53,8 @@
           "bio": "Larry Ellison is a Jewish billionaire entrepreneur, best known as the co-founder, executive chairman, and chief technology officer (CTO) of Oracle Corporation, one of the world's largest software companies.\n\nLarry Ellison is widely recognized as one of the largest private donors to the Israel Defense Forces (IDF) through the non-profit organization Friends of the Israel Defense Forces (FIDF).",
           "influence": 8,
           "role": "private",
-          "manualX": -537.3819139951489,
-          "manualY": -249.81255723224098
+          "manualX": -1007.5736133584401,
+          "manualY": -306.73284186985074
         },
         {
           "id": "potus",
@@ -341,6 +343,11 @@
           "source": "person-mrtwqd8u",
           "target": "person-mrtvnldw",
           "type": "family friend of (Netanyahu was a close friend of Jared's father, Charles Kushner, a prominent real estate developer and major donor to Israeli and Jewish causes. When Netanyahu visited the United States during Jared's youth, he stayed at the Kushner family home in New Jersey. Famously, the teenage Jared Kushner surrendered his own bedroom to Netanyahu and slept in the basement.)"
+        },
+        {
+          "source": "person-mrtwqd8u",
+          "target": "potus",
+          "type": "son-in-law of"
         }
       ],
       "groups": [
