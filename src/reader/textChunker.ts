@@ -54,3 +54,21 @@ export function chunkText(rawText: string): Chunk[] {
 
   return chunks;
 }
+
+export interface ChapterMarker {
+  chapter: string;
+  startIndex: number;
+}
+
+/** One entry per distinct chapter, pointing at its first chunk — for a table of contents. */
+export function getChapterMarkers(chunks: Chunk[]): ChapterMarker[] {
+  const markers: ChapterMarker[] = [];
+  let lastChapter: string | null = null;
+  for (const chunk of chunks) {
+    if (chunk.chapter !== lastChapter) {
+      markers.push({ chapter: chunk.chapter, startIndex: chunk.index });
+      lastChapter = chunk.chapter;
+    }
+  }
+  return markers;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import WebBackground from "../components/WebBackground";
+import { getChapterMarkers } from "../reader/textChunker";
 import { getBook, getProgress, saveProgress } from "../reader/storage";
 import { TTSPlayer, type PlayerState } from "../reader/ttsPlayer";
 import type { Book } from "../reader/types";
@@ -16,11 +17,16 @@ export default function ReaderPlayerPage() {
   const [rate, setRate] = useState(1);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [voiceURI, setVoiceURI] = useState<string | null>(null);
+  const [showChapters, setShowChapters] = useState(false);
   const playerRef = useRef<TTSPlayer | null>(null);
   const rateRef = useRef(rate);
   const voiceRef = useRef(voiceURI);
+  const chunkIndexRef = useRef(chunkIndex);
   rateRef.current = rate;
   voiceRef.current = voiceURI;
+  chunkIndexRef.current = chunkIndex;
+
+  const chapters = useMemo(() => (book ? getChapterMarkers(book.chunks) : []), [book]);
 
   // Load saved progress once per book.
   useEffect(() => {
@@ -70,6 +76,28 @@ export default function ReaderPlayerPage() {
     playerRef.current?.setVoice(voiceURI);
   }, [voiceURI]);
 
+  // Belt-and-suspenders save whenever the tab is hidden/closed, in case a
+  // chunk was mid-flight and hadn't triggered the usual onChunkChange save.
+  useEffect(() => {
+    if (!book) return;
+    const persist = () => {
+      saveProgress({
+        bookId: book.id,
+        chunkIndex: chunkIndexRef.current,
+        rate: rateRef.current,
+        voiceURI: voiceRef.current,
+        updatedAt: Date.now(),
+      });
+    };
+    document.addEventListener("visibilitychange", persist);
+    window.addEventListener("pagehide", persist);
+    return () => {
+      document.removeEventListener("visibilitychange", persist);
+      window.removeEventListener("pagehide", persist);
+      persist();
+    };
+  }, [book]);
+
   if (!book) {
     return (
       <div className="relative min-h-screen overflow-hidden">
@@ -86,6 +114,15 @@ export default function ReaderPlayerPage() {
 
   const chunk = book.chunks[chunkIndex];
   const progressPct = book.chunks.length ? Math.round(((chunkIndex + 1) / book.chunks.length) * 100) : 0;
+  let currentChapterIndex = -1;
+  for (let i = 0; i < chapters.length; i++) {
+    if (chapters[i].startIndex <= chunkIndex) currentChapterIndex = i;
+  }
+
+  function jumpToChunk(index: number) {
+    playerRef.current?.seekTo(index);
+    setShowChapters(false);
+  }
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -96,9 +133,44 @@ export default function ReaderPlayerPage() {
         </Link>
 
         <h1 className="mt-3 text-2xl font-semibold text-slate-100">{book.title}</h1>
-        <p className="mt-1 text-sm text-sky-400/80">{chunk?.chapter}</p>
+        <div className="mt-1 flex items-center justify-between gap-3">
+          <p className="min-w-0 truncate text-sm text-sky-400/80">{chunk?.chapter}</p>
+          <button
+            onClick={() => setShowChapters((v) => !v)}
+            className="shrink-0 rounded-md border border-slate-700 px-2 py-1 text-xs text-slate-300 transition hover:border-sky-500/60 hover:text-sky-300"
+          >
+            Chapters ({chapters.length})
+          </button>
+        </div>
 
-        <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-slate-800">
+        {showChapters && (
+          <div className="mt-3 max-h-64 overflow-y-auto rounded-xl border border-slate-800 bg-web-panel/80 p-2 backdrop-blur-sm">
+            {chapters.map((c, i) => (
+              <button
+                key={c.startIndex}
+                onClick={() => jumpToChunk(c.startIndex)}
+                className={`block w-full truncate rounded-lg px-3 py-2 text-left text-sm transition ${
+                  i === currentChapterIndex
+                    ? "bg-sky-500/15 text-sky-300"
+                    : "text-slate-300 hover:bg-slate-800/60"
+                }`}
+              >
+                {c.chapter}
+              </button>
+            ))}
+          </div>
+        )}
+
+        <input
+          type="range"
+          min={0}
+          max={Math.max(book.chunks.length - 1, 0)}
+          value={chunkIndex}
+          onChange={(e) => jumpToChunk(Number(e.target.value))}
+          className="mt-4 w-full accent-sky-500"
+          aria-label="Jump to position in book"
+        />
+        <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-800">
           <div className="h-full bg-sky-500 shadow-glow transition-all" style={{ width: `${progressPct}%` }} />
         </div>
         <p className="mt-1 text-xs text-slate-500">
