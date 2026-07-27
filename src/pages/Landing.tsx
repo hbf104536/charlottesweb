@@ -57,8 +57,11 @@ export default function Landing() {
           })}
         </div>
 
-        <footer className="mt-16 text-xs text-slate-600">
-          Placeholder data &middot; for demonstration purposes only.
+        <footer className="mt-16 flex flex-col items-center gap-2 text-xs text-slate-600">
+          <p>Placeholder data &middot; for demonstration purposes only.</p>
+          <Link to="/reader" className="text-sky-400/80 hover:text-sky-300">
+            Text-to-speech Reader &rarr;
+          </Link>
         </footer>
       </div>
     </div>
