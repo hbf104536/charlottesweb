@@ -7,3 +7,6 @@ dist-ssr
 .DS_Store
 .vscode/*
 !.vscode/extensions.json
+raw/audio/
+raw/captions/
+__pycache__/

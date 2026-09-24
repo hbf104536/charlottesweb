@@ -1,0 +1,216 @@
+{
+ "speaker": {
+  "name": "Bill Landerholm",
+  "source": "'Bro. Bill Landerholm' in four video descriptions (2021-2024)",
+  "role": "Called 'Brother Bill' when he preached in Pastor Dave Coke's absence (2021-2024). After Dave Coke died in 2024, descriptions say 'Brother Bill serves as the current pastor' of Living Faith Church, Rockton IL, and 2026 titles call him 'Pastor Bill'."
+ },
+ "candidates": [
+  {
+   "id": "lU4qXnWXnQI",
+   "status": "high",
+   "evidence": "Description: 'Bro. Bill Landerholm is preaching on part 9 of the Foundation Series - What is heaven; What is hell?'; thumbnail shows Bill",
+   "title": "Watch Pastor Dave Preach Weekly Sermons On Holiness And Common Sense Living",
+   "upload_date": "20210621",
+   "duration": "1:08:06",
+   "url": "https://www.youtube.com/watch?v=lU4qXnWXnQI"
+  },
+  {
+   "id": "BFrH_eE3AS0",
+   "status": "high",
+   "evidence": "Description: 'Bro. Bill Landerholm presents Foundation Series pt 10'; thumbnail too dark to confirm",
+   "title": "Watch Pastor Dave Preach Weekly Sermons On Holiness And Common Sense Living",
+   "upload_date": "20210628",
+   "duration": "57:49",
+   "url": "https://www.youtube.com/watch?v=BFrH_eE3AS0"
+  },
+  {
+   "id": "F2IVUqKlF4E",
+   "status": "high",
+   "evidence": "Description: 'Brother Bill Landerholm is speaking.'; thumbnail shows Bill",
+   "title": "Watch Pastor Dave Preach Weekly Sermons On Holiness And Common Sense Living",
+   "upload_date": "20220614",
+   "duration": "25:14",
+   "url": "https://www.youtube.com/watch?v=F2IVUqKlF4E"
+  },
+  {
+   "id": "0ppFdgRtl94",
+   "status": "high",
+   "evidence": "Description: 'Join Brother Bill ... Part 2 of the series God Is Lovely in Every Way'; thumbnail shows Bill",
+   "title": "God Is Lovely in Every Way (Part 2) | Uzzah, Evil & The Problem of Suffering | Living Faith Church",
+   "upload_date": "20240504",
+   "duration": "58:31",
+   "url": "https://www.youtube.com/watch?v=0ppFdgRtl94"
+  },
+  {
+   "id": "Gp637_cZ2MM",
+   "status": "medium",
+   "evidence": "Description: 'Bro. Bill Landerholm is taking the service in the Pastors absence.' Full service; Bill may not preach the whole time",
+   "title": "Watch Pastor Dave Preach Weekly Sermons On Holiness And Common Sense Living.",
+   "upload_date": "20240518",
+   "duration": "1:03:46",
+   "url": "https://www.youtube.com/watch?v=Gp637_cZ2MM"
+  },
+  {
+   "id": "BZOyuhT-HBE",
+   "status": "high",
+   "evidence": "Title: 'Brother Bill gives a message entitled Faith Under Fire 08-04-2024'; thumbnail shows Bill",
+   "title": "Brother Bill gives a message entitled Faith Under Fire 08-04-2024",
+   "upload_date": "20240825",
+   "duration": "41:41",
+   "url": "https://www.youtube.com/watch?v=BZOyuhT-HBE"
+  },
+  {
+   "id": "H7t0ragJ38I",
+   "status": "high",
+   "evidence": "Title names Brother Bill; thumbnail shows Bill",
+   "title": "Forward Movement: 4 Signposts to Spiritual Maturity | Brother Bill",
+   "upload_date": "20240924",
+   "duration": "46:56",
+   "url": "https://www.youtube.com/watch?v=H7t0ragJ38I"
+  },
+  {
+   "id": "lBz_Q5HxUrU",
+   "status": "high",
+   "evidence": "Title: Bill's sermon, preached 09/29/2024; thumbnail shows Bill",
+   "title": "Bill's sermon \"Sometimes Prayer is Answered in the Rear View Mirror\" 09/29/2024",
+   "upload_date": "20241201",
+   "duration": "55:00",
+   "url": "https://www.youtube.com/watch?v=lBz_Q5HxUrU"
+  },
+  {
+   "id": "E72NE4fV7Hk",
+   "status": "high",
+   "evidence": "Title names Brother Bill; thumbnail shows Bill. Same topic as lBz_Q5HxUrU but 18 min shorter, so it may be an edited cut or a follow-up sermon",
+   "title": "Brother Bill - Prayer Answered in the Rearview Mirror | Faith, Fervency & God's Will Explained",
+   "upload_date": "20250308",
+   "duration": "36:44",
+   "url": "https://www.youtube.com/watch?v=E72NE4fV7Hk"
+  },
+  {
+   "id": "UYNIvnr5aeg",
+   "status": "high",
+   "evidence": "Title names Brother Bill; thumbnail shows Bill",
+   "title": "Brother Bill – \"Faith Without Works Is Dead\" | Why Good Works Matter for Christians",
+   "upload_date": "20241124",
+   "duration": "48:06",
+   "url": "https://www.youtube.com/watch?v=UYNIvnr5aeg"
+  },
+  {
+   "id": "cJbHMwCt4QQ",
+   "status": "high",
+   "evidence": "Title names Brother Bill; thumbnail shows Bill",
+   "title": "Brother Bill - Does God Forgive Without Repentance? | Justice, Mercy & Prayer",
+   "upload_date": "20250308",
+   "duration": "32:08",
+   "url": "https://www.youtube.com/watch?v=cJbHMwCt4QQ"
+  },
+  {
+   "id": "RG23QKu3uTU",
+   "status": "high",
+   "evidence": "Title names Brother Bill; thumbnail shows Bill. Same length (35:38) and same thumbnail as SAs9W-alnu8, so it's a duplicate upload with a different title",
+   "title": "Obeying the Heavenly Call | Street Evangelism & Standing for Truth | Brother Bill",
+   "upload_date": "20250316",
+   "duration": "35:38",
+   "url": "https://www.youtube.com/watch?v=RG23QKu3uTU"
+  },
+  {
+   "id": "SAs9W-alnu8",
+   "status": "duplicate",
+   "evidence": "Duplicate of RG23QKu3uTU: same duration and thumbnail",
+   "title": "Brother Bill – \"Faith Without Works Is Dead\" | Why Good Works Matter for Christians",
+   "upload_date": "20260203",
+   "duration": "35:38",
+   "url": "https://www.youtube.com/watch?v=SAs9W-alnu8"
+  },
+  {
+   "id": "HQOV_y3u4qs",
+   "status": "high",
+   "evidence": "Title: Pastor Bill; thumbnail shows Bill",
+   "title": "Moral Government Theology Part 1 from Pastor Bill.",
+   "upload_date": "20260416",
+   "duration": "39:47",
+   "url": "https://www.youtube.com/watch?v=HQOV_y3u4qs"
+  },
+  {
+   "id": "1RYtSPDp0EE",
+   "status": "high",
+   "evidence": "Title: Pastor Bill; thumbnail shows Bill",
+   "title": "Moral Government Theology Part 2 by Pastor Bill",
+   "upload_date": "20260503",
+   "duration": "47:21",
+   "url": "https://www.youtube.com/watch?v=1RYtSPDp0EE"
+  },
+  {
+   "id": "kbVPVGOzmr0",
+   "status": "high",
+   "evidence": "Title: Pastor Bill; thumbnail shows Bill",
+   "title": "Moral Government Theology Part 3 by Pastor Bill",
+   "upload_date": "20260517",
+   "duration": "32:30",
+   "url": "https://www.youtube.com/watch?v=kbVPVGOzmr0"
+  },
+  {
+   "id": "-Nb9OlsGllQ",
+   "status": "possible",
+   "evidence": "Description credits 'Lars Engstrom', but the thumbnail looks like Bill",
+   "title": "What Is Church? Rescuing the Perishing & Storming the Gates of Hell | Matthew 16 | Lars Engstrom",
+   "upload_date": "20230624",
+   "duration": "51:09",
+   "url": "https://www.youtube.com/watch?v=-Nb9OlsGllQ"
+  },
+  {
+   "id": "onBPMxQWvGg",
+   "status": "possible-not-sermon",
+   "evidence": "Testimony from 'Brian', then a campus-outreach report from Bill and Britney. Not a sermon",
+   "title": "From Truck Driver to Sold-Out for Jesus | Campus Evangelism Report | Living Faith Church",
+   "upload_date": "20241124",
+   "duration": "42:36",
+   "url": "https://www.youtube.com/watch?v=onBPMxQWvGg"
+  },
+  {
+   "id": "1BzGHEJaX2E",
+   "status": "likely-mislabeled",
+   "evidence": "Title says Brother Bill, but the thumbnail shows Dave Coke. Uploaded 2021, while Dave was preaching a prayer series",
+   "title": "Brother Bill – Why Some Prayers Seem Unanswered | Prayer Pt. 3 | Gordon Colson's Church",
+   "upload_date": "20210910",
+   "duration": "33:25",
+   "url": "https://www.youtube.com/watch?v=1BzGHEJaX2E"
+  },
+  {
+   "id": "7qyRS846UlE",
+   "status": "likely-mislabeled",
+   "evidence": "Title says Brother Bill, but the thumbnail shows Dave Coke",
+   "title": "Don't Be Deceived: How to Spot False Prophets & Guard Your Faith | Matt. 24 | Brother Bill",
+   "upload_date": "20231028",
+   "duration": "38:12",
+   "url": "https://www.youtube.com/watch?v=7qyRS846UlE"
+  },
+  {
+   "id": "AxywNdvLHkE",
+   "status": "likely-mislabeled",
+   "evidence": "Title says Brother Bill, but the thumbnail shows Dave Coke",
+   "title": "Saved FROM Sin, Not IN Sin — Earnestly Contending for the True Faith | Jude 3-4 | Brother Bill",
+   "upload_date": "20240106",
+   "duration": "34:05",
+   "url": "https://www.youtube.com/watch?v=AxywNdvLHkE"
+  },
+  {
+   "id": "XKCyNS7YFeE",
+   "status": "likely-mislabeled",
+   "evidence": "Title says Brother Bill, but the thumbnail shows Dave Coke",
+   "title": "Grace That Frees You FROM Sin | Jude 3-4 | Brother Bill | Living Faith Church",
+   "upload_date": "20240113",
+   "duration": "49:33",
+   "url": "https://www.youtube.com/watch?v=XKCyNS7YFeE"
+  },
+  {
+   "id": "n6mY4zsz5zs",
+   "status": "likely-mislabeled",
+   "evidence": "Description mentions Brother Bill, but the thumbnail shows Dave Coke",
+   "title": "Grace Is NOT a License to Sin | Destroying Cheap Grace | Romans 6 & 1 John 3 | Living Faith Church",
+   "upload_date": "20240629",
+   "duration": "41:41",
+   "url": "https://www.youtube.com/watch?v=n6mY4zsz5zs"
+  }
+ ]
+}

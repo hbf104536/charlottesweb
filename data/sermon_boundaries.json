@@ -1,0 +1,170 @@
+{
+ "note": "start/end are seconds into the YouTube video. Most sermons are interactive: congregants (and sometimes Dave Coke) interject, so quotes must be checked for speaker.",
+ "sermons": [
+  {
+   "id": "lU4qXnWXnQI",
+   "speaker": "Bill Landerholm",
+   "start": 54.6,
+   "end": 4078,
+   "sermon_title": "Foundation Series Part 9: What Are Heaven and Hell?",
+   "preached": null,
+   "notes": "Video opens with a prayer (0:00-0:54), excluded. Interactive: others interject throughout, and Dave Coke comments near the end (from ~1:05:29)."
+  },
+  {
+   "id": "BFrH_eE3AS0",
+   "speaker": "Bill Landerholm",
+   "start": 8.6,
+   "end": 3458,
+   "sermon_title": "Foundation Series Part 10: Free Will in Eternity",
+   "preached": null,
+   "notes": "Interactive: a discussion with the congregation (including Dave Coke) runs throughout."
+  },
+  {
+   "id": "F2IVUqKlF4E",
+   "speaker": "Bill Landerholm",
+   "start": 0.3,
+   "end": 1284,
+   "sermon_title": "Untitled sermon: The Church Is a Participation Activity; Hypocrisy and Self-Deception",
+   "preached": null,
+   "notes": "From ~15:11 it's mostly congregation discussion with Bill's replies mixed in. From 21:27 to the end of the video a congregant tells a personal story, excluded. The video stops mid-sentence."
+  },
+  {
+   "id": "0ppFdgRtl94",
+   "speaker": "Bill Landerholm",
+   "start": 1.7,
+   "end": 3452,
+   "sermon_title": "Lovely in Every Way, Part 2",
+   "preached": null,
+   "notes": "Recording starts mid-sentence. Congregation Q&A near the end; the final minute (discussion) is excluded."
+  },
+  {
+   "id": "Gp637_cZ2MM",
+   "speaker": "Bill Landerholm",
+   "start": 0.5,
+   "end": 3820,
+   "sermon_title": "Be Angry and Sin Not (Ephesians 4:26)",
+   "preached": null,
+   "notes": "Starts at the sermon; ends when Bill asks Dave to close in prayer. Interactive."
+  },
+  {
+   "id": "BZOyuhT-HBE",
+   "speaker": "Bill Landerholm",
+   "start": 0,
+   "end": 2487,
+   "sermon_title": "Faith Under Fire (Faith That Is Tested)",
+   "preached": "2024-08-04",
+   "notes": "Bill mostly reads a written sermon. His closing prayer (41:27-end) is excluded."
+  },
+  {
+   "id": "H7t0ragJ38I",
+   "speaker": "Bill Landerholm",
+   "start": 0,
+   "end": 2811,
+   "sermon_title": "Forward Movement: A View of Progress in the Life of the Pilgrim",
+   "preached": null,
+   "notes": "Ends as Bill invites comments."
+  },
+  {
+   "id": "lBz_Q5HxUrU",
+   "speaker": "Bill Landerholm",
+   "start": 0,
+   "end": 3299,
+   "sermon_title": "Sometimes Prayer Is Answered in the Rear View Mirror",
+   "preached": "2024-09-29",
+   "notes": "The last ~50 s include a congregant's comment (from 54:10) and Bill's reply; the video ends mid-sentence."
+  },
+  {
+   "id": "E72NE4fV7Hk",
+   "speaker": "Bill Landerholm",
+   "start": 0,
+   "end": 2201,
+   "sermon_title": "Prayer series (part 'two and a half'): Prayer Answered in the Rearview Mirror",
+   "preached": null,
+   "notes": "A different sermon from lBz_Q5HxUrU; it continues a prayer series. Ends at 'let's pray'."
+  },
+  {
+   "id": "UYNIvnr5aeg",
+   "speaker": "Bill Landerholm",
+   "start": 0,
+   "end": 2884,
+   "sermon_title": "Faith Without Works Is Dead (Work and Good Works)",
+   "preached": null,
+   "notes": "Recording starts mid-sentence. Interactive."
+  },
+  {
+   "id": "cJbHMwCt4QQ",
+   "speaker": "Bill Landerholm",
+   "start": 0,
+   "end": 1924,
+   "sermon_title": "Does God Forgive Without Repentance? (second part of the previous week's sermon)",
+   "preached": null,
+   "notes": "Ends at the closing prayer. Interactive."
+  },
+  {
+   "id": "RG23QKu3uTU",
+   "speaker": "Bill Landerholm",
+   "start": 0,
+   "end": 2137,
+   "sermon_title": "Obeying the Heavenly Call",
+   "preached": null,
+   "notes": "Recording starts and ends mid-sentence. SAs9W-alnu8 is the same recording (99.98% identical captions) under the wrong title 'Faith Without Works Is Dead'."
+  },
+  {
+   "id": "HQOV_y3u4qs",
+   "speaker": "Bill Landerholm",
+   "start": 0,
+   "end": 2385,
+   "sermon_title": "Moral Government Theology, Part 1",
+   "preached": null,
+   "notes": "Interactive."
+  },
+  {
+   "id": "1RYtSPDp0EE",
+   "speaker": "Bill Landerholm",
+   "start": 0,
+   "end": 2831,
+   "sermon_title": "Moral Government Theology, Part 2",
+   "preached": null,
+   "notes": "Interactive."
+  },
+  {
+   "id": "kbVPVGOzmr0",
+   "speaker": "Bill Landerholm",
+   "start": 0,
+   "end": 1947,
+   "sermon_title": "Moral Government Theology, Part 3 (TULIP)",
+   "preached": null,
+   "notes": "Ends where communion begins."
+  },
+  {
+   "id": "SAs9W-alnu8",
+   "exclude": true,
+   "reason": "Duplicate of RG23QKu3uTU (same recording)"
+  },
+  {
+   "id": "1BzGHEJaX2E",
+   "exclude": true,
+   "reason": "Speaker is Dave Coke, not Bill: the speaker refers to Bill in the third person ('bill and i were talking about this in the car'). Content is a Sermon on the Mount / Beatitudes introduction, not prayer. Title and description are wrong."
+  },
+  {
+   "id": "7qyRS846UlE",
+   "exclude": true,
+   "reason": "Speaker appears to be Dave Coke: the thumbnail shows him, and the preaching style and phrasing match his sermons. Content is Matthew 24."
+  },
+  {
+   "id": "AxywNdvLHkE",
+   "exclude": true,
+   "reason": "Speaker appears to be Dave Coke (thumbnail, style). Content is Jude / Christ the Rock."
+  },
+  {
+   "id": "XKCyNS7YFeE",
+   "exclude": true,
+   "reason": "Speaker appears to be Dave Coke (thumbnail, style). Content is Jude 3-4, New Year message."
+  },
+  {
+   "id": "n6mY4zsz5zs",
+   "exclude": true,
+   "reason": "Speaker is Dave Coke, not Bill: the speaker says 'Bill corrected that in my little paper' and 'as I think Bill pointed out'. Content is 'Everything Is a Test' (2 Cor 13:5), not 'Grace Is NOT a License to Sin'."
+  }
+ ]
+}
