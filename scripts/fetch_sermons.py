@@ -38,8 +38,10 @@ def sermon_ids():
 def js_runtime_args():
     # YouTube downloads need a JavaScript runtime; deno is yt-dlp's default.
     for name in ("deno", "node", "bun"):
-        if shutil.which(name):
-            return [] if name == "deno" else ["--js-runtimes", name]
+        path = shutil.which(name)
+        if path:
+            # Pass the full path: yt-dlp doesn't always find non-deno runtimes by name.
+            return ["--js-runtimes", f"{name}:{path}"]
     print("WARNING: no JavaScript runtime found (deno, node or bun). Captions may still work,\n"
           "but audio downloads will probably fail. Install deno: https://deno.com")
     return []
